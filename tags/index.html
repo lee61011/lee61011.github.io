@@ -324,10 +324,8 @@
           
 
     
-    <div id="gitalk-container"></div>  
-
-  
-
+      <div id="gitalk-container"></div> 
+    </div>
   
 
 
@@ -665,23 +663,23 @@
 
 
 
-          
-      <link rel='stylesheet' href="https://yiyeti.cc/usr/themes/veryse/css/gitalk.css">
-      <script src="https://yiyeti.cc/usr/themes/veryse/css/gitalk.min.js"></script>
-      <script type="text/javascript">
-          var gitalk = new Gitalk({
-            clientID:  '', 
-            clientSecret: '',
-            id: window.location.pathname,
-            repo: 'blog-comments', 
-            owner: 'lee61011', 
-            admin: 'lee61011', 
-            distractionFreeMode: 'true',
-          })
-          gitalk.render('gitalk-container')
-      </script>
-    
-    
+  <link rel="stylesheet" href="/css/gitalk.css">
+  <script src="/js/src/gitalk.min.js"></script>
+
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'f86eb9ce36769941fa5d',
+          clientSecret: 'b6db9d32aa4356829cb5d0f09a22d5d0f3dd7c19',
+          repo: 'blog-comments',
+          owner: '',
+          admin: [''], 
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+
+        gitalk.render('gitalk-container')           
+       </script>
+
 
   
 
@@ -1024,5 +1022,8 @@
 
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/src/love.js"></script>
+
+  <!--崩溃欺骗-->
+  <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 </body>
 </html>
