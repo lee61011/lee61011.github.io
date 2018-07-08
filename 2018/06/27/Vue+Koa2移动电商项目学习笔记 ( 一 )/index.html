@@ -89,14 +89,14 @@
 <meta name="description" content="Vue + Koa2 移动电商项目学习笔记 ( 一 )开发环境搭建 建立文件夹 新建 SmileVue 文件夹  使用 vue-cli 生成项目目录  使用 npm -v 检测 npm 版本，尽量使用 5.X 以上版本 全局安装 vue-cli,     npm install vue-cli -g 在终端中输入 vue init webpack 来初始化项目，  项目名需要小写">
 <meta name="keywords" content="Vue,Koa2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue + Koa2 移动电商项目学习笔记 ( 一 )">
-<meta property="og:url" content="http://yoursite.com/2018/06/27/Vue+Koa2移动电商项目学习笔记/index.html">
+<meta property="og:title" content="Vue + Koa2 移动电商项目学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/06/27/Vue+Koa2移动电商项目学习笔记 ( 一 )/index.html">
 <meta property="og:site_name" content="lee61011">
 <meta property="og:description" content="Vue + Koa2 移动电商项目学习笔记 ( 一 )开发环境搭建 建立文件夹 新建 SmileVue 文件夹  使用 vue-cli 生成项目目录  使用 npm -v 检测 npm 版本，尽量使用 5.X 以上版本 全局安装 vue-cli,     npm install vue-cli -g 在终端中输入 vue init webpack 来初始化项目，  项目名需要小写">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-07T10:10:38.564Z">
+<meta property="og:updated_time" content="2018-07-08T15:56:03.594Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue + Koa2 移动电商项目学习笔记 ( 一 )">
+<meta name="twitter:title" content="Vue + Koa2 移动电商项目学习笔记">
 <meta name="twitter:description" content="Vue + Koa2 移动电商项目学习笔记 ( 一 )开发环境搭建 建立文件夹 新建 SmileVue 文件夹  使用 vue-cli 生成项目目录  使用 npm -v 检测 npm 版本，尽量使用 5.X 以上版本 全局安装 vue-cli,     npm install vue-cli -g 在终端中输入 vue init webpack 来初始化项目，  项目名需要小写">
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/27/Vue+Koa2移动电商项目学习笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/27/Vue+Koa2移动电商项目学习笔记 ( 一 )/"/>
 
 
 
 
 
-  <title>Vue + Koa2 移动电商项目学习笔记 ( 一 ) | lee61011</title>
+  <title>Vue + Koa2 移动电商项目学习笔记 | lee61011</title>
   
 
 
@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/27/Vue+Koa2移动电商项目学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/27/Vue+Koa2移动电商项目学习笔记 ( 一 )/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lee">
@@ -313,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue + Koa2 移动电商项目学习笔记 ( 一 )</h1>
+          <h1 class="post-title" itemprop="name headline">Vue + Koa2 移动电商项目学习笔记</h1>
         
 
         <div class="post-meta">
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5,325
+                  6,302
                 </span>
               
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  26
+                  31
                 </span>
               
             </div>
@@ -701,7 +701,65 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;floorComponent :floorData=&quot;floor1&quot; :floorTitle=&quot;floorName.floor1&quot;&gt;&lt;/floorComponent&gt;</span><br><span class="line">&lt;floorComponent :floorData=&quot;floor2&quot; :floorTitle=&quot;floorName.floor2&quot;&gt;&lt;/floorComponent&gt;</span><br><span class="line">&lt;floorComponent :floorData=&quot;floor3&quot; :floorTitle=&quot;floorName.floor3&quot;&gt;&lt;/floorComponent&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="Filter-在实战中的使用"><a href="#Filter-在实战中的使用" class="headerlink" title="Filter 在实战中的使用"></a>Filter 在实战中的使用</h2><p>​</p>
+<h2 id="Filter-在实战中的使用"><a href="#Filter-在实战中的使用" class="headerlink" title="Filter 在实战中的使用"></a>Filter 在实战中的使用</h2><p><strong>编写过滤器通用方法</strong></p>
+<p>因为过滤器都是需要在很多组件中进行使用，所以要编写一个比较通用的方法。先在 src 文件夹下建立一个 filter 文件夹， 然后在 filter 文件夹下建立一个 moneyFilter.js 文件。</p>
+<p>这时候就可以编写格式化钱的方法， 我们这里使用了 toFixed() 方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export function toMoney (money) &#123;</span><br><span class="line">    let newMoney = money;</span><br><span class="line">    if (newMoney) &#123;</span><br><span class="line">        newMoney = newMoney.toFixed(2);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        newMoney = 0;</span><br><span class="line">        newMoney = newMoney.toFined(2);</span><br><span class="line">    &#125;</span><br><span class="line">    return newMoney;</span><br><span class="line">&#125;</span><br><span class="line">//	这个方法并不完善，后面会进行修改</span><br></pre></td></tr></table></figure>
+<p><strong>引入 Filter</strong></p>
+<blockquote>
+<p>import { toMoney } from “@/filter/moneyFilter.js”</p>
+</blockquote>
+<p>这里的 @  代表的是 src 目录的意思，这个是 webpack 的配置，我们可以在 /build/webpack.base.conf.js 里找到这个配置项。</p>
+<p><strong>编写 Vue 里的 filter 属性</strong></p>
+<p>vue 是支持 filter 属性的，之前只是方法，现在要在 Vue 文件里编写属性.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">filters: &#123;</span><br><span class="line">    moneyFilter(money) &#123;</span><br><span class="line">        return toMoney(money)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//	这里要注意 filter 的名字可以随便起，但是使用的 toMoney 方法，要和上边引入的一样。</span><br></pre></td></tr></table></figure>
+<p><strong>在 template 中使用 filter</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">直接在使用价格的地方使用 &#123;&#123; item.price | moneyFilter &#125;&#125; 就可以了</span><br></pre></td></tr></table></figure>
+<p><strong>优化 filter 通用方法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//	上边的通用方法做的并不完善，在这里需要优化一下</span><br><span class="line">export function toMoney(money = 0)&#123;</span><br><span class="line">    return money.toFixed(2)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="首页热卖模块的-Van-list-组件的使用"><a href="#首页热卖模块的-Van-list-组件的使用" class="headerlink" title="首页热卖模块的 Van-list 组件的使用"></a>首页热卖模块的 Van-list 组件的使用</h2><p><strong>html + css 部分的编写</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//	html 代码，这些代码是写在 ShoppingMall.vue 文件中的</span><br><span class="line">&lt;!--Hot Area--&gt;</span><br><span class="line">&lt;div class=&quot;hot-area&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;hot-title&quot;&gt;热卖商品&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;hot-goods&quot;&gt;</span><br><span class="line">      &lt;!--这里需要一个list组件--&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">//	CSS 部分代码</span><br><span class="line">.hot-area&#123;</span><br><span class="line">      text-align: center;</span><br><span class="line">      font-size:14px;</span><br><span class="line">      height: 1.8rem;</span><br><span class="line">      line-height:1.8rem;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Vant 列表 (List) 组件的使用</strong></p>
+<ol>
+<li><p>引入 List 组件： 在 /src/main.js 文件中引入 List 组件</p>
+<blockquote>
+<p>import  { List } from “vant”</p>
+<p>Vue.use( List )</p>
+</blockquote>
+</li>
+<li><p>构造数据： 在 data 里声明 hotGoods</p>
+<blockquote>
+<p>data(){    hotGoods: []    }        //    热卖商品</p>
+</blockquote>
+</li>
+<li><p>在 axios 里获得数据</p>
+<blockquote>
+<p>this.hotGoods = response.data.data.hotGoods        //    热卖商品</p>
+</blockquote>
+</li>
+<li><p>加入 List 组件，并使用 van-row 布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--Hot Area--&gt;</span><br><span class="line">&lt;div class=&quot;hot-area&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;hot-title&quot;&gt;热卖商品&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;hot-goods&quot;&gt;</span><br><span class="line">        &lt;van-list&gt;</span><br><span class="line">            &lt;van-row gutter=&quot;20&quot;&gt;</span><br><span class="line">                &lt;van-col span=&quot;12&quot; v-for=&quot;( item, index) in hotGoods&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">                    &lt;div&gt;&#123;&#123;item.name&#125;&#125;&lt;/div&gt;</span><br><span class="line">                &lt;/van-col&gt;</span><br><span class="line">            &lt;/van-row&gt;</span><br><span class="line">        &lt;/van-list&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>商品显示组件的编写</strong></p>
+<p>新建 /src/component/goodsInfoComponent.vue 文件，用来制作商品组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class=&quot;goods-info&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;goods-image&quot;&gt;</span><br><span class="line">            &lt;img v-lazy=&quot;goodsImage&quot; width=&quot;90%&quot; /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;goods-name&quot;&gt;&#123;&#123;goodsName&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;goods-price&quot;&gt;￥&#123;&#123;goodsPrice | moneyFilter &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line">    import &#123;toMoney&#125; from &apos;@/filter/moneyFilter.js&apos;</span><br><span class="line">    export default &#123;</span><br><span class="line">        props:[&apos;goodsImage&apos;,&apos;goodsName&apos;,&apos;goodsPrice&apos;],</span><br><span class="line">        filters:&#123;</span><br><span class="line">            moneyFilter(money)&#123;</span><br><span class="line">                return toMoney(money)</span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"> </span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">    .goods-name&#123;</span><br><span class="line">        padding: 0 8px;</span><br><span class="line">       overflow: hidden;</span><br><span class="line">       text-overflow: ellipsis;</span><br><span class="line">       white-space:nowrap; </span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>在 ShoppingMall.vue 里引入，并且在 components 里声明一下</p>
+<blockquote>
+<p>import goodsInfo from ‘../component/goodsInfoComponent’</p>
+</blockquote>
+<p>在模板中使用组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;van-row gutter=&quot;20&quot;&gt;</span><br><span class="line">    &lt;van-col span=&quot;12&quot; v-for=&quot;(item,index) in hotGoods&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">        &lt;goods-info :goodsImage=&quot;item.image&quot; :goodsName=&quot;item.name&quot; :goodsPrice=&quot;item.price&quot;&gt;&lt;/goods-info&gt;</span><br><span class="line">    &lt;/van-col&gt;</span><br><span class="line">&lt;/van-row&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="编写后台服务接口配置文件"><a href="#编写后台服务接口配置文件" class="headerlink" title="编写后台服务接口配置文件"></a>编写后台服务接口配置文件</h2><p>在开发中我们直接把数据接口写到了 axios 中，这样写如果地址改变或者接口改变，我们需要进入业务逻辑代码进行修改，维护起来会非常麻烦，现在我们把项目中用到的接口都单独拿出来，做一个接口配置文件 serviceAPI.config.js</p>
+<p><strong>编写接口配置文件</strong></p>
+<p>在项目 src 目录下建立 serviceAPI.config.js，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const BASEURL = &quot;https://www.easy-mock.com/mock/5ae2eeb23fbbf24d8cd7f0b6/SmileVue/&quot;</span><br><span class="line">const URL = &#123;</span><br><span class="line">    getShoppingMallInfo:BASEURL+&apos;index&apos;,</span><br><span class="line">    getGoodsInfo:BASEURL+&apos;getGoodsInfo&apos;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">module.exports = URL</span><br></pre></td></tr></table></figure>
+<p>编写好后，就可以直接在要使用的文件中用 import 的形式引入。</p>
+<blockquote>
+<p>import url from ‘@.serviceAPI.config.js’</p>
+</blockquote>
+<p>引入后就可以直接使用了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">    url: url.getShoppingMallInfo,</span><br><span class="line">    method: &apos;get&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -886,7 +944,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -951,7 +1009,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-Koa2-移动电商项目学习笔记-一"><span class="nav-number">1.</span> <span class="nav-text">Vue + Koa2 移动电商项目学习笔记 ( 一 )</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境搭建"><span class="nav-number">1.1.</span> <span class="nav-text">开发环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入-Vant-组件库"><span class="nav-number">1.2.</span> <span class="nav-text">引入 Vant 组件库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端屏幕适配基础"><span class="nav-number">1.3.</span> <span class="nav-text">移动端屏幕适配基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页布局和路由设置"><span class="nav-number">1.4.</span> <span class="nav-text">首页布局和路由设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页搜索区域的布局"><span class="nav-number">1.5.</span> <span class="nav-text">首页搜索区域的布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页轮播图的制作"><span class="nav-number">1.6.</span> <span class="nav-text">首页轮播图的制作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#easyMock-和-Axios-的使用"><span class="nav-number">1.7.</span> <span class="nav-text">easyMock 和 Axios 的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mock-数据的使用-flex-布局"><span class="nav-number">1.8.</span> <span class="nav-text">Mock 数据的使用 flex 布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#商品推荐-vue-awesome-swiper"><span class="nav-number">1.9.</span> <span class="nav-text">商品推荐 vue-awesome-swiper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-awesome-swiper-详解1"><span class="nav-number">1.10.</span> <span class="nav-text">vue-awesome-swiper 详解1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-awesome-swiper-详解2"><span class="nav-number">1.11.</span> <span class="nav-text">vue-awesome-swiper 详解2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页楼层区域布局"><span class="nav-number">1.12.</span> <span class="nav-text">首页楼层区域布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#楼层组件的封装和-watch-的使用"><span class="nav-number">1.13.</span> <span class="nav-text">楼层组件的封装和 watch 的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#楼层组件的完善"><span class="nav-number">1.14.</span> <span class="nav-text">楼层组件的完善</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filter-在实战中的使用"><span class="nav-number">1.15.</span> <span class="nav-text">Filter 在实战中的使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-Koa2-移动电商项目学习笔记-一"><span class="nav-number">1.</span> <span class="nav-text">Vue + Koa2 移动电商项目学习笔记 ( 一 )</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境搭建"><span class="nav-number">1.1.</span> <span class="nav-text">开发环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入-Vant-组件库"><span class="nav-number">1.2.</span> <span class="nav-text">引入 Vant 组件库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端屏幕适配基础"><span class="nav-number">1.3.</span> <span class="nav-text">移动端屏幕适配基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页布局和路由设置"><span class="nav-number">1.4.</span> <span class="nav-text">首页布局和路由设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页搜索区域的布局"><span class="nav-number">1.5.</span> <span class="nav-text">首页搜索区域的布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页轮播图的制作"><span class="nav-number">1.6.</span> <span class="nav-text">首页轮播图的制作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#easyMock-和-Axios-的使用"><span class="nav-number">1.7.</span> <span class="nav-text">easyMock 和 Axios 的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mock-数据的使用-flex-布局"><span class="nav-number">1.8.</span> <span class="nav-text">Mock 数据的使用 flex 布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#商品推荐-vue-awesome-swiper"><span class="nav-number">1.9.</span> <span class="nav-text">商品推荐 vue-awesome-swiper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-awesome-swiper-详解1"><span class="nav-number">1.10.</span> <span class="nav-text">vue-awesome-swiper 详解1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-awesome-swiper-详解2"><span class="nav-number">1.11.</span> <span class="nav-text">vue-awesome-swiper 详解2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页楼层区域布局"><span class="nav-number">1.12.</span> <span class="nav-text">首页楼层区域布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#楼层组件的封装和-watch-的使用"><span class="nav-number">1.13.</span> <span class="nav-text">楼层组件的封装和 watch 的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#楼层组件的完善"><span class="nav-number">1.14.</span> <span class="nav-text">楼层组件的完善</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filter-在实战中的使用"><span class="nav-number">1.15.</span> <span class="nav-text">Filter 在实战中的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页热卖模块的-Van-list-组件的使用"><span class="nav-number">1.16.</span> <span class="nav-text">首页热卖模块的 Van-list 组件的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写后台服务接口配置文件"><span class="nav-number">1.17.</span> <span class="nav-text">编写后台服务接口配置文件</span></a></li></ol></li></ol></div>
             
 
           </div>
