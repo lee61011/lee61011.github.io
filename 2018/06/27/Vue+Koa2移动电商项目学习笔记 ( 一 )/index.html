@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:description" content="Vue + Koa2 移动电商项目学习笔记 ( 一 )开发环境搭建 建立文件夹 新建 SmileVue 文件夹  使用 vue-cli 生成项目目录  使用 npm -v 检测 npm 版本，尽量使用 5.X 以上版本 全局安装 vue-cli,     npm install vue-cli -g 在终端中输入 vue init webpack 来初始化项目，  项目名需要小写">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-08T15:56:03.594Z">
+<meta property="og:updated_time" content="2018-07-08T16:01:37.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue + Koa2 移动电商项目学习笔记">
 <meta name="twitter:description" content="Vue + Koa2 移动电商项目学习笔记 ( 一 )开发环境搭建 建立文件夹 新建 SmileVue 文件夹  使用 vue-cli 生成项目目录  使用 npm -v 检测 npm 版本，尽量使用 5.X 以上版本 全局安装 vue-cli,     npm install vue-cli -g 在终端中输入 vue init webpack 来初始化项目，  项目名需要小写">
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6,302
+                  6,361
                 </span>
               
 
@@ -714,7 +714,7 @@
 <p>vue 是支持 filter 属性的，之前只是方法，现在要在 Vue 文件里编写属性.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">filters: &#123;</span><br><span class="line">    moneyFilter(money) &#123;</span><br><span class="line">        return toMoney(money)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//	这里要注意 filter 的名字可以随便起，但是使用的 toMoney 方法，要和上边引入的一样。</span><br></pre></td></tr></table></figure>
 <p><strong>在 template 中使用 filter</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">直接在使用价格的地方使用 &#123;&#123; item.price | moneyFilter &#125;&#125; 就可以了</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">直接在使用价格的地方使用 &#123;&#123; item.price | moneyFilter &#125;&#125; 就可以了</span><br><span class="line"></span><br><span class="line">//	注: 上面这句话在此文章中必须要写在 代码框或者引用框 中, 否则文章无法提交到博客中, 详细报错信息稍后会在另一片文章中作出说明.</span><br></pre></td></tr></table></figure>
 <p><strong>优化 filter 通用方法</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//	上边的通用方法做的并不完善，在这里需要优化一下</span><br><span class="line">export function toMoney(money = 0)&#123;</span><br><span class="line">    return money.toFixed(2)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="首页热卖模块的-Van-list-组件的使用"><a href="#首页热卖模块的-Van-list-组件的使用" class="headerlink" title="首页热卖模块的 Van-list 组件的使用"></a>首页热卖模块的 Van-list 组件的使用</h2><p><strong>html + css 部分的编写</strong></p>
@@ -944,7 +944,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
