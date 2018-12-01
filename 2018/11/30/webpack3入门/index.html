@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:description" content="webpack3 入门安装 安装 nodejs 打开命令行终端, 输入一下命令, 如果出现安装版本号 ( 如: v8.11.2 ), 说明安装成功  $ node -v   安装 webpack 在命令行终端上输入以下命令, 全局安装 webpack:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-30T15:36:08.972Z">
+<meta property="og:updated_time" content="2018-12-01T14:44:05.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack3入门">
 <meta name="twitter:description" content="webpack3 入门安装 安装 nodejs 打开命令行终端, 输入一下命令, 如果出现安装版本号 ( 如: v8.11.2 ), 说明安装成功  $ node -v   安装 webpack 在命令行终端上输入以下命令, 全局安装 webpack:">
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,163
+                  2,633
                 </span>
               
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  11
                 </span>
               
             </div>
@@ -519,6 +519,114 @@
 <li>简单维护, 所有的命令都放在一起了, 也能方便查看</li>
 <li>别人下载了你的源码, 一查看 package.json 就能知道怎么运行这个项目</li>
 </ul>
+</li>
+</ol>
+<h2 id="使用第一个-webpack-插件-html-webpack-plugin"><a href="#使用第一个-webpack-插件-html-webpack-plugin" class="headerlink" title="使用第一个 webpack 插件 html-webpack-plugin"></a>使用第一个 webpack 插件 html-webpack-plugin</h2><ol>
+<li><p><strong>创建 index.html 文件</strong></p>
+<p>首先, 在 dist 目录下创建 index.html 文件, 内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Project&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=&quot;app.bundle.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>这样的 index.html 文件太死了, 连 js 文件都写死了, 有时候引用的 js 文件是动态变化的, 比如这样的: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;app.bundle1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;app.bundle2.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;app.bundle3.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">...	...</span><br></pre></td></tr></table></figure>
+<p>还有一种情况, 有时候为了更好的 cache 处理, 文件名还带着 hash, 例如这样的:</p>
+<blockquote>
+<p>main.9046fe2bf8166cbe16d7.js </p>
+</blockquote>
+<p>这个 hash 是文件的 md5 值, 随着文件的内容而变化, 总不能每变化一次就改一下 index.html 文件吧, 效率太低了.</p>
+<p>下面我们使用 webpack 的 <a href="https://github.com/jantimon/html-webpack-plugin" target="_blank" rel="noopener">html-webpack-plugin</a> 来处理这个问题.</p>
+</li>
+<li><p><strong>html-webpack-plugin</strong></p>
+<ul>
+<li><p><strong>安装</strong></p>
+<blockquote>
+<p>npm install html-webpack-plugin –save-dev</p>
+</blockquote>
+<p>安装成功后, package.json 文件的 “devDependencies” 选项会多出来一行 “html-webpack-plugin”: “^2.30.1”</p>
+</li>
+<li><p><strong>使用</strong></p>
+<p>现在把之前的 dist/index.html 文件先删除掉, 使用 html-webpack-plugin 插件来自动生成它.</p>
+<p>修改 webpack.config.js 文件, 如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">    entry: &apos;./src/app.js&apos;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: __dirname + &apos;/dist&apos;,</span><br><span class="line">        filename: &apos;./dist/app.bundle.js&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        new HtmlWebpackPlugin(),</span><br><span class="line">    ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>最后, 运行一下 npm run dev 命令, 会发现在 dist 目录下生成了 index.html 文件.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>更好的使用 html-webpack-plugin</strong></p>
+<p>打开 index.html 文件可以看到, 连标题 <title>Webpack App</title> 都自动生成了. 如果不想要这样默认的标题怎么办呢?</p>
+<p>要改变 title 很简单, HtmlWebpackPlugin 这个方法可以传入很多参数, 下面这样就可以解决这个问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...	...</span><br><span class="line">plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">    	title: &quot;hello world&quot;</span><br><span class="line">    &#125;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>重新生成 index.html 文件, 可以看到标题已经改变了.</p>
+<p>有时候我们要让 index.html 根据我们的意愿来生成. 就是说它的内容是我们自己定的. 可以使用 html-webpack-plugin 的 template 功能来实现,  修改 webpack.config.js 如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...	...</span><br><span class="line">plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">    	title: &quot;hello world&quot;,</span><br><span class="line">    	template: &apos;./src/index.html&apos;,</span><br><span class="line">    &#125;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>接着新建 src/index.html 文件, 内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Hello World&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>运行 npm run dev 生成的 dist/index.html 文件内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Hello World&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;./dist/app.bundle.js&quot;&gt;&lt;/script&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>下面在看看其他几个参数及结果</p>
+<ul>
+<li><p>filename: “index.html”   默认情况下生成的 html 文件叫 index.html, 如果不想叫这个名字, 可以修改</p>
+</li>
+<li><blockquote>
+<p>minify: {</p>
+<p>​          collapseWhitespace: true,</p>
+<p>}</p>
+<p>//     这个可以把生成的 index.html 文件的内容的没用的空格去掉, 减少空间.</p>
+</blockquote>
+</li>
+<li><p>hash: true   为了更好的 cache, 可以在文件名后加个 hash.   如: src=”./dist/app.bundle.js?0b5552db1f811f9c43e0”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//	最后的 webpack.config.js 内容如下所示</span><br><span class="line">...	...	</span><br><span class="line">plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">    	template: &apos;./src/index.html&apos;,</span><br><span class="line">    	filename: &apos;index.html&apos;,</span><br><span class="line">    	minify: &#123;</span><br><span class="line">            collapseWhitespace: true,</span><br><span class="line">    	&#125;,</span><br><span class="line">    	hash: true,</span><br><span class="line">    &#125;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>html-webpack-plugin 还有很多其他用法和选项, 参考官方文档.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="使用-loader-处理-CSS-和-Sass"><a href="#使用-loader-处理-CSS-和-Sass" class="headerlink" title="使用 loader 处理 CSS 和 Sass"></a>使用 loader 处理 CSS 和 Sass</h2><ol>
+<li><p><strong>什么是 loader</strong></p>
+<p>官方的解释是这样的:</p>
+<blockquote>
+<p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS文件！ </p>
+</blockquote>
+<p>其实就是处理文件的, 比如把 Scss 转化成 CSS, TypeScript 转化成 JavaScript 等.</p>
+</li>
+<li><p><strong>用 css-loader 和 style-loader 处理 CSS</strong></p>
+<ul>
+<li><p>新建 app.css 文件并在 app.js 文件中引入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//	src/app.css</span><br><span class="line">body &#123;</span><br><span class="line">    background: pink;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//	src/app.js</span><br><span class="line">import css from &apos;./app.css&apos;;</span><br><span class="line">console.log(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure>
+<p>如果现在运行 npm run dev 或者 webpack 命令, 会出现 You may need an appropriate loader to handle this file type. 这样的报错信息.</p>
+<p>意思是说, 默认情况下, webpack 处理不了 CSS 的东西, 你需要一个 loader 来处理这个类型的文件.</p>
+</li>
+<li><p>安装 css-loader 和 style-loader</p>
+<blockquote>
+<p>$ npm install css-loader style-loader –save-dev</p>
+</blockquote>
+<p>在 webpack.config.js 文件中进行配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    ...	...</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">            	//	意思是说, 当检测到 .css 结尾的文件时, 使用 style-loader 和 css-loader 来处理</span><br><span class="line">                test: /\.css$/,</span><br><span class="line">                use: [&apos;style-loader&apos;, &apos;css-loader&apos;]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在再使用 npm run dev 编译一下,  打开 dist/index.html 可以看到背景色已经变成了粉色了.</p>
+<p>编译出来的 app.bundle.js 是包含 CSS 内容的.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>用 sass-loader 把 SASS 编译成 CSS</strong></p>
+<ul>
+<li><p>修改文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//	src/app.scss	将 src/app.css 改名为 src/app.scss</span><br><span class="line">body &#123;</span><br><span class="line">    background: pink;</span><br><span class="line">    p &#123;</span><br><span class="line">        color: red;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//	src/index.html</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;p&gt;Hello world&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;	</span><br><span class="line"></span><br><span class="line">//	src/app.js</span><br><span class="line">import css from &apos;./app.scss&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 sass-loader 和node-sass</p>
+<blockquote>
+<p>$ npm install sass-loader node-sass –save-dev</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//	webpack.config.js</span><br><span class="line">...	...</span><br><span class="line">module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">        ...	...</span><br><span class="line">        &#123;</span><br><span class="line">            test: /\.scss$/,</span><br><span class="line">            use: [ &apos;style-loader&apos;, &apos;css-loader&apos;, &apos;sass-loader&apos; ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打包完成后可以看到 p 标签内的文本变成了红色的</p>
+</li>
+</ul>
+</li>
+<li><p><strong>使用 extract-text-webpack-plugin 把 CSS 分离成文件</strong></p>
+<p>有时候我们要把 SASS 或者 CSS 处理好后, 放到一个 CSS 文件中, 可以使用这个插件来实现</p>
+<blockquote>
+<p>$ npm install extract-text-webpack-plugin –save-dev</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//	webpack.config.js</span><br><span class="line">const ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;);</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    ...	...</span><br><span class="line">    plugins: [</span><br><span class="line">        ...	...</span><br><span class="line">        new ExtractTextPlugin(&apos;style.css&apos;)</span><br><span class="line">    ],</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: /\.scss$/,</span><br><span class="line">                use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">                    fallback: &apos;style-loader&apos;,</span><br><span class="line">                    use: [ &apos;css-loader&apos;, &apos;sass-loader&apos; ]</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样编译后就在 dist 目录下生成了 style.css 文件.</p>
+<p>并且可以在 <em><u>index.html</u></em> 文件中看到 style.css 是通过 link 的方式引入进来的.</p>
 </li>
 </ol>
 
@@ -768,7 +876,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack3-入门"><span class="nav-number">1.</span> <span class="nav-text">webpack3 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-hello-world"><span class="nav-number">1.2.</span> <span class="nav-text">实现 hello world</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack-配置文件-webpack-config-js"><span class="nav-number">1.3.</span> <span class="nav-text">webpack 配置文件 webpack.config.js</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack3-入门"><span class="nav-number">1.</span> <span class="nav-text">webpack3 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-hello-world"><span class="nav-number">1.2.</span> <span class="nav-text">实现 hello world</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack-配置文件-webpack-config-js"><span class="nav-number">1.3.</span> <span class="nav-text">webpack 配置文件 webpack.config.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用第一个-webpack-插件-html-webpack-plugin"><span class="nav-number">1.4.</span> <span class="nav-text">使用第一个 webpack 插件 html-webpack-plugin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-loader-处理-CSS-和-Sass"><span class="nav-number">1.5.</span> <span class="nav-text">使用 loader 处理 CSS 和 Sass</span></a></li></ol></li></ol></div>
             
 
           </div>
