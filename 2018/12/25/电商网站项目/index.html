@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:description" content="电商网站项目开发本项目结合 webpack、Vuex、vue-router 等知识点来开发一个具有代表性的电商网站项目. 所涉及的内容涵盖了许多典型场景, 如商品类表按照价格、销量排序; 商品列表按照品牌、价格过滤; 动态的购物车; 使用优惠码等.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-25T14:51:43.862Z">
+<meta property="og:updated_time" content="2018-12-25T14:58:54.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="电商网站项目">
 <meta name="twitter:description" content="电商网站项目开发本项目结合 webpack、Vuex、vue-router 等知识点来开发一个具有代表性的电商网站项目. 所涉及的内容涵盖了许多典型场景, 如商品类表按照价格、销量排序; 商品列表按照品牌、价格过滤; 动态的购物车; 使用优惠码等.">
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  508
+                  849
                 </span>
               
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -429,7 +429,12 @@
 <p>其中, 路由的页面配置放在了 router.js 文件内单独维护; Vuex 默认设置了 state getters mutations actions, 之后随项目需求持续增加.</p>
 <p>项目中全局使用的一些 CSS 样式写在了 style.css 文件内, 在 main.js 中直接导入, webpack 打包时, 会将此 CSS 文件与.vue 单文件中的 CSS 一同提取, 输出到 main.css 文件.</p>
 <p>在 shopping 目录下新建 views 目录, 用于存放每个路由页面的 .vue 文件; 新建 components 目录用来存放公共组件; 新建 images 目录用来存放项目中用到的图片. 配置完这些后, 通过 NPM 运行 npm run dev 命令, 启动 webpack 服务. 这样就完成了基础工程的搭建.</p>
-
+<h2 id="商品列表页"><a href="#商品列表页" class="headerlink" title="商品列表页"></a>商品列表页</h2><h3 id="需求分析与模块拆分"><a href="#需求分析与模块拆分" class="headerlink" title="需求分析与模块拆分"></a>需求分析与模块拆分</h3><p>商品列表页面用于展示相关的所有商品, 一般具有筛选和排序两种过滤方法. 比如可以按照品牌筛选或颜色筛选, 筛选条件可以叠加. 可以按照价格、销量等在筛选的基础上再进行排序, 最终过滤出符合要求的商品.</p>
+<p>排序为单选, 初始按 “默认” 进行排序, 其中价格可以分为升序和降序两种排序, 销量则只有降序.</p>
+<p>品牌和颜色都是单选, 单次点击选中, 再次点击取消选中.</p>
+<p>初次打开商品类表会请求一次远程数据 ( 使用 setTimeout 模拟异步 ) 获取到的全量的商品数据, 然后筛选和排序都是在本地完成 (真实场景也有在服务端进行筛选和排序的做法, 因为商品很有可能会分页, 前端一次性拿到所有数据不现实)</p>
+<p>商品列表主要有两个模块, 一个是路由组件(views/list.vue), 负责数据的请求、过滤相关的逻辑; 另一个是商品简介组件 (components/product.vue), 鼠标经过时, 显示出加入购物车的按钮. 这两个模块的样式都直接写在格子的 .vue 文件的 <style scopen=""> 部分.</p>
+</style></p>
       
     </div>
     
@@ -676,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#电商网站项目开发"><span class="nav-number">1.</span> <span class="nav-text">电商网站项目开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目工程搭建"><span class="nav-number">1.1.</span> <span class="nav-text">项目工程搭建</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#电商网站项目开发"><span class="nav-number">1.</span> <span class="nav-text">电商网站项目开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目工程搭建"><span class="nav-number">1.1.</span> <span class="nav-text">项目工程搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#商品列表页"><span class="nav-number">1.2.</span> <span class="nav-text">商品列表页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求分析与模块拆分"><span class="nav-number">1.2.1.</span> <span class="nav-text">需求分析与模块拆分</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
