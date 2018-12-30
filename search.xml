@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[常见的web安全漏洞]]></title>
     <url>%2F2018%2F12%2F30%2F%E5%B8%B8%E8%A7%81%E7%9A%84web%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%2F</url>
-    <content type="text"><![CDATA[常见的 web 安全漏洞常见的 web 安全漏洞可以分为 客户端漏洞 和 服务端漏洞. 客户端漏洞包括 XSS、CSRF、点击劫持、URL跳转 等; 服务端漏洞包括 SQL注入、命令注入、文件操作类 等. XSS漏洞什么是 XSS漏洞XSS漏洞的分类xss漏洞的分类可以分为 存储型、反射型 和 DOM 型, 具体参考下表: XSS 类型 存储型 反射型 DOM 型 触发过程 1. 黑客构造 XSS 脚本 2. 正常用户访问携带 XSS 脚本的页面 正常用户访问携带 XSS 脚本的URL 正常用户访问携带 XSS 脚本的URL 数据存储 数据库 URL URL 谁来输出 后端 web 应用程序 后端 web 应用程序 前端 JavaScript 输出位置 HTTP 响应中 HTTP 响应中 动态构造的 DOM 节点]]></content>
+    <content type="text"><![CDATA[常见的 web 安全漏洞可以分为 客户端漏洞 和 服务端漏洞. 客户端漏洞包括 XSS、CSRF、点击劫持、URL跳转 等; 服务端漏洞包括 SQL注入、命令注入、文件操作类 等. XSS漏洞什么是 XSS漏洞XSS漏洞的分类xss漏洞的分类可以分为 存储型、反射型 和 DOM 型, 具体参考下表: XSS 类型 存储型 反射型 DOM 型 触发过程 1. 黑客构造 XSS 脚本 2. 正常用户访问携带 XSS 脚本的页面 正常用户访问携带 XSS 脚本的URL 正常用户访问携带 XSS 脚本的URL 数据存储 数据库 URL URL 谁来输出 后端 web 应用程序 后端 web 应用程序 前端 JavaScript 输出位置 HTTP 响应中 HTTP 响应中 动态构造的 DOM 节点]]></content>
       <categories>
         <category>网络安全</category>
       </categories>
