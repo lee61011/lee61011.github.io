@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[JavaScript知识点梳理]]></title>
     <url>%2F2019%2F01%2F09%2FJavaScript%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86%2F</url>
-    <content type="text"><![CDATA[字符串数组对象]]></content>
+    <content type="text"><![CDATA[字符串 charAt(index): 获取对应下标的字符, 没有则返回空字符串. charCodeAt(index): 获取对应下标的字符编码 (0 – 65535), 没有则返回 NaN. 数组对象]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
