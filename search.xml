@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[测试加密文章]]></title>
+    <url>%2F2019%2F01%2F19%2F%E6%B5%8B%E8%AF%95%E5%8A%A0%E5%AF%86%E6%96%87%E7%AB%A0%2F</url>
+    <content type="text"><![CDATA[测试加密文章 文章内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容这些是内容]]></content>
+      <categories>
+        <category>观点与感想</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript知识点梳理]]></title>
     <url>%2F2019%2F01%2F09%2FJavaScript%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86%2F</url>
     <content type="text"><![CDATA[字符串 charAt(index) 获取对应下标的字符, 没有则返回空字符串. charCodeAt(index) 获取对应下标的字符编码 (0 – 65535), 没有则返回 NaN. fromCharCode(num1, …, numN) 获取指定的 Unicode 值序列创建的字符串. split() 使用指定的分隔符字符串将一个 String 对象分割成字符串数组. slice(beginSlice[, endSlice]) 提取一个字符串的一部分，并返回一新的字符串. substr(start [, length]) 获取一个字符串中从指定位置开始到指定字符数的字符. substring(indexStart [,indexEnd]) 获取字符串开始索引到结束索引之间的字符. toUpperCase() / toLowerCase() 大小写转换. toLocaleUpperCase() / toLocaleLowerCase() 方法根据任何特定于语言环境转换字符串大小写. 数组对象]]></content>
