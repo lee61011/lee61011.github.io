@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pmrpvwoee.bkt.clouddn.com/mac.jpg">
-<meta property="og:updated_time" content="2019-02-18T09:31:40.289Z">
+<meta property="og:updated_time" content="2019-02-19T14:30:34.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则详解">
 <meta name="twitter:image" content="http://pmrpvwoee.bkt.clouddn.com/mac.jpg">
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  163
+                  588
                 </span>
               
 
@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -440,6 +440,43 @@
 <p>编写一个规则，在一个字符串中把符合规则的内容都获取到，正则捕获使用的方法：正则的 <code>exec</code> 方法、字符串中的 <code>split</code>、<code>replace</code>、<code>match</code> 等方法都支持正则</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^$/</span>;</span><br><span class="line"><span class="comment">//	两个斜杠中间包含一些内容就是正则，两个斜杠之间包含的全部内容都是元字符</span></span><br></pre></td></tr></table></figure>
+<h2 id="正则的元字符和修饰符"><a href="#正则的元字符和修饰符" class="headerlink" title="正则的元字符和修饰符"></a>正则的元字符和修饰符</h2><blockquote>
+<p>任何一个正则都是由 <code>元字符</code> 和 <code>修饰符</code> 组成的</p>
+</blockquote>
+<p><code>修饰符</code></p>
+<p>g (global)：全局匹配</p>
+<p>i (ignoreCase)：忽略大小写匹配</p>
+<p>m (multiline)：多行匹配</p>
+<p><code>元字符</code></p>
+<p>【 量词元字符 】</p>
+<p>+：让前面的元字符出现一次到多次</p>
+<p>?：出现零到一次</p>
+<p>*：出现零到多次</p>
+<p>{n}：出现 n 次</p>
+<p>{n,}：出现 n 到多次</p>
+<p>{n,m}：出现 n 到 m 次</p>
+<p>【 特殊意义的元字符 】</p>
+<p>\：转义字符（把一个普通字符转变为有特殊意义的字符，或者把一个有意义字符转换为普通的字符）</p>
+<p>.：出了 <code>\n</code> （换行符） 以外的任意字符</p>
+<p>\d：匹配一个 <code>0~9</code> 之间的数字</p>
+<p>\D：匹配任意一个 <code>非0~9</code> 之间的数字（大写字母和小写字母的组合正好是反向的）</p>
+<p>\w：匹配一个 <code>0~9或字母或_</code> 之间的字符</p>
+<p>\s：匹配一个任意空白字符</p>
+<p>\b：匹配一个边界符</p>
+<p>x|y：匹配 x 或者 y 中的一个</p>
+<p>[a-z]：匹配 <code>a-z</code> 中的任意一个字符</p>
+<p>[^a-z]：和上面的相反，匹配任意一个 <code>非a-z</code> 的字符</p>
+<p>[xyz]：匹配 x 或者 y 或者 z 中的一个字符</p>
+<p>[^xyz]：匹配除了 <code>xyz</code> 以外的任意字符</p>
+<p>()：正则的小分组，匹配一个小分组（小分组可以理解为大正则中的一个小正则）</p>
+<p>^：以某一个元字符开始</p>
+<p>$：以某一个元字符结束</p>
+<p>?:：只匹配不捕获</p>
+<p>?=：正向预查</p>
+<p>?!：负向预查</p>
+<p>……</p>
+<p>除了以上特殊元字符和量词元字 符，其余的都叫做普通元字符：代表本身意义的元字符</p>
+<p>参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank" rel="noopener">RegExp</a></p>
 <h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>
       
     </div>
@@ -693,7 +730,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是正则"><span class="nav-number">1.</span> <span class="nav-text">什么是正则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">2.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是正则"><span class="nav-number">1.</span> <span class="nav-text">什么是正则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则的元字符和修饰符"><span class="nav-number">2.</span> <span class="nav-text">正则的元字符和修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">3.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
             
 
           </div>
