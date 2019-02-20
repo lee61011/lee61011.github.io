@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pmrpvwoee.bkt.clouddn.com/mac.jpg">
-<meta property="og:updated_time" content="2019-02-19T14:30:34.814Z">
+<meta property="og:updated_time" content="2019-02-20T13:30:26.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则详解">
 <meta name="twitter:image" content="http://pmrpvwoee.bkt.clouddn.com/mac.jpg">
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  588
+                  1,338
                 </span>
               
 
@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  5
                 </span>
               
             </div>
@@ -477,7 +477,24 @@
 <p>……</p>
 <p>除了以上特殊元字符和量词元字 符，其余的都叫做普通元字符：代表本身意义的元字符</p>
 <p>参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank" rel="noopener">RegExp</a></p>
-<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>
+<h2 id="元字符详解"><a href="#元字符详解" class="headerlink" title="元字符详解"></a>元字符详解</h2><p><code>^ $</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 匹配一个到多个数字 */</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\d+/</span>;	<span class="comment">//	包含 xxx 即可， 这里说明包含1到多个数字即可</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'新年2018快乐2019'</span>;</span><br><span class="line">reg.test(str);	<span class="comment">//	true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 匹配以一个到多个数字开始 */</span></span><br><span class="line">reg = <span class="regexp">/^\d+/</span>;</span><br><span class="line">reg.test(str);	<span class="comment">//	false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 匹配以一个到多个数字开始结束并且中间也是数字 */</span></span><br><span class="line">reg = <span class="regexp">/^\d+$/</span>;		<span class="comment">//	只能是 xxx 的，这里说明只能是1到多个数字</span></span><br><span class="line">reg.test(<span class="string">'2018'</span>);	<span class="comment">//	ture</span></span><br><span class="line">reg.test(<span class="string">'2018新年快乐2019'</span>);	<span class="comment">//	false</span></span><br><span class="line">reg.test(<span class="string">'2'</span>);	<span class="comment">//	true ^ 或者 $ 只是一个修饰符或者声明，不会占据字符串的位置</span></span><br></pre></td></tr></table></figure>
+<p><code>\</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^2.3$/</span>;</span><br><span class="line">reg.test(<span class="string">'2.3'</span>);	<span class="comment">//	true</span></span><br><span class="line">reg.test(<span class="string">'2+3'</span>);	<span class="comment">//	true</span></span><br><span class="line"><span class="comment">//	点在正则中的意思是 匹配除了 \n 以外的任意字符，而不是单纯的小数点</span></span><br><span class="line"></span><br><span class="line">reg = <span class="regexp">/^2\.3$/</span>;</span><br><span class="line">reg.test(<span class="string">'2.3'</span>);	<span class="comment">//	true</span></span><br><span class="line">reg.test(<span class="string">'2+3'</span>);	<span class="comment">//	false</span></span><br><span class="line"><span class="comment">//	使用转义字符把点转换为小数点本身的意思</span></span><br></pre></td></tr></table></figure>
+<p><code>x|y</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^18|19$/</span>;</span><br><span class="line"><span class="comment">//	符合这个规则的有很多, 例如：18 19 189 119 819 181 1819……</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	表示的意思有：</span></span><br><span class="line"><span class="comment">	1. 18或者19</span></span><br><span class="line"><span class="comment">	2. 以1开头 以9结尾 中间是8或者1</span></span><br><span class="line"><span class="comment">	3. 以18开头或者以19结尾即可</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^(18|19)$/</span>;</span><br><span class="line"><span class="comment">//	此时只有18或者19符合规则</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>()：正则中的分组，也可以理解为一个大正则中的一个正则（包起来的部分是一个整体）；在正则中我们可以使用小括号 <em>改变一些默认的优先级</em></p>
+<p>小分组还有第二个作用： <em>分组引用</em></p>
+<p>小分组的第三个作用：<em>分组捕获</em></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	分组引用：</span></span><br><span class="line"><span class="comment">		\1 或者 \2 …… 出现和第N个分组一模一样的内容</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^([a-z])([a-z])\2([a-z])$/</span>;</span><br><span class="line"><span class="comment">//	符合这个规则的字符串包括：book、week、attr、http……</span></span><br></pre></td></tr></table></figure>
+<p><code>[]</code></p>
+<blockquote>
+<p>[xyz]、【^xyz】、[a-z]、【^a-z】</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	\w：数字字母下划线中的任意一个字符</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[a-zA-Z0-9_]$/</span>;		<span class="comment">//	等价于 \w</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">/* 中括号中出现的元字符，一般都代表本身的含义 */</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[.?+&amp;]+$/</span>;</span><br><span class="line"><span class="comment">//	里面的四个元字符都是本身的含义，例如：点就是小数点，不是所谓的任意字符……</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	需求：匹配样式类名的规则 （数字、字母、下划线、-），并且不能以 - 开头</span></span><br><span class="line"><span class="comment">//	var reg = /^[\w-]+$/;</span></span><br><span class="line"><span class="comment">//	var reg = /^[0-9a-zA-Z_-]+$/;	//	这两个没有处理以-开头的情况</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^\w[\w-]*$/</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//	需求：验证 18~65 之间的年龄</span></span><br><span class="line"><span class="comment">//	var reg = /^[18-65]$/;	//	这种做法是错的</span></span><br><span class="line"><span class="comment">//	表示的意思是 1或者8~6或者5中的任意一个字符，中括号中出现的18不是数字18，而是1或者8，并且当前正则是非法的，因为不能设置 8~6 这种范围</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	正确的应该分三个阶段处理：</span></span><br><span class="line"><span class="comment">		18 或者 19	   /(18|19)/</span></span><br><span class="line"><span class="comment">		20~59			/(2-5)\d/</span></span><br><span class="line"><span class="comment">		60~65			/(6[0-5])/</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^((18|19)|([2-5]\d)|(6[0-5]))$/</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h3>
       
     </div>
     
@@ -730,7 +747,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是正则"><span class="nav-number">1.</span> <span class="nav-text">什么是正则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则的元字符和修饰符"><span class="nav-number">2.</span> <span class="nav-text">正则的元字符和修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">3.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是正则"><span class="nav-number">1.</span> <span class="nav-text">什么是正则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则的元字符和修饰符"><span class="nav-number">2.</span> <span class="nav-text">正则的元字符和修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符详解"><span class="nav-number">3.</span> <span class="nav-text">元字符详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#未完待续"><span class="nav-number">3.1.</span> <span class="nav-text">未完待续</span></a></li></ol></li></ol></div>
             
 
           </div>
