@@ -96,18 +96,17 @@
 
 
 
-<meta name="description" content="减少HTTP请求次数或者减少请求数据的大小页面中每发送一次 HTTP 请求，都需要完成请求 + 响应这个完整的 HTTP 事务，会消耗一些时间，也可能会导致 HTTP 链接通道的堵塞，为了提高页面加载速度和运行的性能，我们应该减少 HTTP 的请求次数和减少请求内容的大小 1、采用 CSS 雪碧图（CSS Sprit / CSS 图片精灵）技术，把一些小图合并在一张大图上，使用的时候通过背景图片定">
 <meta name="keywords" content="SEO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端开发优化的一些常见方法">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/前端开发优化的一些常见方法/index.html">
 <meta property="og:site_name" content="lee61011">
-<meta property="og:description" content="减少HTTP请求次数或者减少请求数据的大小页面中每发送一次 HTTP 请求，都需要完成请求 + 响应这个完整的 HTTP 事务，会消耗一些时间，也可能会导致 HTTP 链接通道的堵塞，为了提高页面加载速度和运行的性能，我们应该减少 HTTP 的请求次数和减少请求内容的大小 1、采用 CSS 雪碧图（CSS Sprit / CSS 图片精灵）技术，把一些小图合并在一张大图上，使用的时候通过背景图片定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-08T06:47:45.648Z">
+<meta property="og:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wtswkh6hj31960u0aui.jpg">
+<meta property="og:updated_time" content="2019-03-09T12:44:37.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发优化的一些常见方法">
-<meta name="twitter:description" content="减少HTTP请求次数或者减少请求数据的大小页面中每发送一次 HTTP 请求，都需要完成请求 + 响应这个完整的 HTTP 事务，会消耗一些时间，也可能会导致 HTTP 链接通道的堵塞，为了提高页面加载速度和运行的性能，我们应该减少 HTTP 的请求次数和减少请求内容的大小 1、采用 CSS 雪碧图（CSS Sprit / CSS 图片精灵）技术，把一些小图合并在一张大图上，使用的时候通过背景图片定">
+<meta name="twitter:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wtswkh6hj31960u0aui.jpg">
 
 
 
@@ -431,7 +430,9 @@
       
 
       
-        <h2 id="减少HTTP请求次数或者减少请求数据的大小"><a href="#减少HTTP请求次数或者减少请求数据的大小" class="headerlink" title="减少HTTP请求次数或者减少请求数据的大小"></a>减少HTTP请求次数或者减少请求数据的大小</h2><p><em>页面中每发送一次 HTTP 请求，都需要完成请求 + 响应这个完整的 HTTP 事务，会消耗一些时间，也可能会导致 HTTP 链接通道的堵塞，为了提高页面加载速度和运行的性能，我们应该减少 HTTP 的请求次数和减少请求内容的大小</em></p>
+        <p><img src="http://wx1.sinaimg.cn/large/005ywkXxly1g0wtswkh6hj31960u0aui.jpg" alt="seo"></p>
+<a id="more"></a>
+<h2 id="减少HTTP请求次数或者减少请求数据的大小"><a href="#减少HTTP请求次数或者减少请求数据的大小" class="headerlink" title="减少HTTP请求次数或者减少请求数据的大小"></a>减少HTTP请求次数或者减少请求数据的大小</h2><p><em>页面中每发送一次 HTTP 请求，都需要完成请求 + 响应这个完整的 HTTP 事务，会消耗一些时间，也可能会导致 HTTP 链接通道的堵塞，为了提高页面加载速度和运行的性能，我们应该减少 HTTP 的请求次数和减少请求内容的大小</em></p>
 <p>1、<strong>采用 CSS 雪碧图</strong>（CSS Sprit / CSS 图片精灵）技术，把一些小图合并在一张大图上，使用的时候通过背景图片定位，定位到具体的某一张小图上</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pubBg</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'../img/sprit.png'</span>) no-repeat;</span><br><span class="line">    background-size: x y;	//	和原图大小保持一致</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    background-position: x y;	//	通过北京定位，定位到具体的小图位置</span><br><span class="line">&#125;</span><br><span class="line">... ...</span><br><span class="line"></span><br><span class="line">&lt;div class="pubBg box"&gt;&lt;div&gt;</span><br></pre></td></tr></table></figure>
 <p>2、真实项目中，我们最好<strong>把 CSS 或者 JS 文件进行合并压缩</strong>；尤其是在移动端开发的时候，如果 CSS 或者 JS 内容不是很多，我们可以采取内嵌式，以此减少 HTTP 请求的次数，加快页面加载速度</p>
