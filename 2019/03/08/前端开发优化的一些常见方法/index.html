@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wtswkh6hj31960u0aui.jpg">
-<meta property="og:updated_time" content="2019-03-09T12:44:37.347Z">
+<meta property="og:updated_time" content="2019-03-10T14:40:29.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发优化的一些常见方法">
 <meta name="twitter:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wtswkh6hj31960u0aui.jpg">
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,374
+                  2,434
                 </span>
               
 
@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  9
                 </span>
               
             </div>
@@ -474,7 +474,52 @@
 <blockquote>
 <p>CDN：分布式（地域分布式）</p>
 </blockquote>
-<p>### </p>
+<h2 id="关于编写代码时候的一些优化技巧"><a href="#关于编写代码时候的一些优化技巧" class="headerlink" title="关于编写代码时候的一些优化技巧"></a>关于编写代码时候的一些优化技巧</h2><p><em>除了减少 HTTP 请求次数和大小可以后话性能，我们在编写代码的时候，也可以进行一些优化，让页面的性能有所提升（有些不好的代码编写习惯，会导致页面性能消耗太大，例如 内存泄漏）</em></p>
+<p>1、在编写 JS 代码的时候，<strong>尽量减少对 DOM 的操作</strong></p>
+<blockquote>
+<p>在 JS 中操作 DOM是一个非常消耗性能的事情，但是我们有不可避免的操作 DOM，我们只能尽量减少对于它的操作</p>
+</blockquote>
+<p>【操作 DOM 的弊端】</p>
+<ul>
+<li>DOM 存在映射机制（JS 中的 DOM 元素对象和页面中的 DOM 结构是存在映射机制的，一改则都改），这种映射机制，是浏览器按照 W3C 标准完成对 JS 语言的构建和 DOM 的构建（其实就是构建了一个监听机制），操作 DOM 是同时要修改两个地方，相对于一些其他的 JS 编程来说是消耗性能的</li>
+<li>页面中的 DOM 结构改变或者样式改变，会触发浏览器的回流（浏览器会把 DOM 结构重新进行计算，这个操作很消耗性能）和重绘（把一个元素的样式重新渲染）</li>
+<li>……</li>
+</ul>
+<p>2、编写代码的时候，更多的的<strong>使用异步编程</strong></p>
+<blockquote>
+<p>同步编程可能导致：上面东西完不成，下面任务也做不了，我们开发的时候，可以把某一个区域模块都设置为异步编程，这样只要模块之间没有必然的先后顺序，都可以独立进行加载，不会受到上面模块的堵塞影响（不常用）</p>
+<p>尤其是 AJAX 数据请求，我们一般都要使用异步编程，最好是基于 promise 设计模式进行管理（项目中经常使用 fetch、axios 等插件来进行 AJAX 请求处理，因为这些插件中就是基于 promise 设计模式对 ajax 进行的封装处理）</p>
+</blockquote>
+<p>3、在真实项目中，我们尽可能避免一次性循环过多数据（因为循环操作是同步编程），尤其是要避免 while 导致的死循环操作</p>
+<p>4、CSS 选择器优化</p>
+<ul>
+<li>尽量减少标签选择器的使用</li>
+<li>尽可能少使用 ID 选择器，多使用样式类选择器（通用性强）</li>
+<li>减少选择器前面的前缀，例如：<code>.headerBox .nav .left a{}</code>（选择器是从右向左查找的）</li>
+</ul>
+<p>5、避免使用 CSS 表达式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* CSS 表达式 */</span></span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">expression</span>((new Date()).<span class="built_in">getHours</span>()%<span class="number">2</span> ? <span class="string">'red'</span> : <span class="string">'blue'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6、减少页面中的冗余代码，尽可能提高方法的重复使用率：<code>低耦合高内聚</code></p>
+<p>7、最好 CSS 放在 head 中，JS 放在 body 尾部，让页面加载的时候，先加载 CSS，再加载 JS （先呈现页面，在给用户提供操作）</p>
+<p>8、<strong>JS 中避免使用 eval</strong></p>
+<ul>
+<li>性能消耗大</li>
+<li>代码压缩后，容易出现代码执行错乱问题</li>
+</ul>
+<p>9、JS 中尽量减少闭包的使用</p>
+<ul>
+<li>闭包会形成一个不销毁的栈内存，过多的栈内存累计会影响页面的性能</li>
+<li>还会容易导致内存的泄漏</li>
+<li>闭包也有自己的优势：保存和保护，我们只能尽量减少，但是无可避免</li>
+</ul>
+<p>10、在做 DOM 时间绑定的时候，尽量避免一个个的事件绑定，而是采用性能更高的<strong>事件委托</strong>来实现</p>
+<blockquote>
+<p>事件委托（事件代理）：</p>
+<p>把事件绑定给外层容器，当里面的后代元素相关行为被触发，外层容器绑定的方法也会被处罚执行（冒泡传播机制导致），通过事件源是谁，我们做不同的操作即可</p>
+</blockquote>
+<p>11、尽量使用 CSS3 动画代替 JS 动画，因为 CSS3 的动画或者变形都开启了硬件加速，性能比 JS 动画好</p>
+<p>12、编写 JS 代码的时候尽可能使用<code>设计模式</code>来构建体系，方便后期的维护，也提高了扩充性等</p>
+<p>13、CSS 中减少对滤镜的使用，页面中也减少对于 flash 的使用</p>
 
       
     </div>
@@ -728,7 +773,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#减少HTTP请求次数或者减少请求数据的大小"><span class="nav-number">1.</span> <span class="nav-text">减少HTTP请求次数或者减少请求数据的大小</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#减少HTTP请求次数或者减少请求数据的大小"><span class="nav-number">1.</span> <span class="nav-text">减少HTTP请求次数或者减少请求数据的大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于编写代码时候的一些优化技巧"><span class="nav-number">2.</span> <span class="nav-text">关于编写代码时候的一些优化技巧</span></a></li></ol></div>
             
 
           </div>
