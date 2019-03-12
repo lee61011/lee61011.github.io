@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wtswkh6hj31960u0aui.jpg">
-<meta property="og:updated_time" content="2019-03-10T14:40:29.239Z">
+<meta property="og:updated_time" content="2019-03-12T14:17:11.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发优化的一些常见方法">
 <meta name="twitter:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wtswkh6hj31960u0aui.jpg">
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,434
+                  2,534
                 </span>
               
 
@@ -474,7 +474,7 @@
 <blockquote>
 <p>CDN：分布式（地域分布式）</p>
 </blockquote>
-<h2 id="关于编写代码时候的一些优化技巧"><a href="#关于编写代码时候的一些优化技巧" class="headerlink" title="关于编写代码时候的一些优化技巧"></a>关于编写代码时候的一些优化技巧</h2><p><em>除了减少 HTTP 请求次数和大小可以后话性能，我们在编写代码的时候，也可以进行一些优化，让页面的性能有所提升（有些不好的代码编写习惯，会导致页面性能消耗太大，例如 内存泄漏）</em></p>
+<h2 id="关于编写代码时候的一些优化技巧"><a href="#关于编写代码时候的一些优化技巧" class="headerlink" title="关于编写代码时候的一些优化技巧"></a>关于编写代码时候的一些优化技巧</h2><p><em>除了减少 HTTP 请求次数和大小可以优化性能，我们在编写代码的时候，也可以进行一些优化，让页面的性能有所提升（有些不好的代码编写习惯，会导致页面性能消耗太大，例如 内存泄漏）</em></p>
 <p>1、在编写 JS 代码的时候，<strong>尽量减少对 DOM 的操作</strong></p>
 <blockquote>
 <p>在 JS 中操作 DOM是一个非常消耗性能的事情，但是我们有不可避免的操作 DOM，我们只能尽量减少对于它的操作</p>
@@ -520,6 +520,13 @@
 <p>11、尽量使用 CSS3 动画代替 JS 动画，因为 CSS3 的动画或者变形都开启了硬件加速，性能比 JS 动画好</p>
 <p>12、编写 JS 代码的时候尽可能使用<code>设计模式</code>来构建体系，方便后期的维护，也提高了扩充性等</p>
 <p>13、CSS 中减少对滤镜的使用，页面中也减少对于 flash 的使用</p>
+<h2 id="关于页面的-SEO-优化技巧"><a href="#关于页面的-SEO-优化技巧" class="headerlink" title="关于页面的 SEO 优化技巧"></a>关于页面的 SEO 优化技巧</h2><p>1、 页面中杜绝出现死链接（404页面），而且对于用户输入一个错误页面，我们要引导到 404提示页面 中（服务器处理的）</p>
+<p>2、避免浏览器中异常错误的抛出</p>
+<ul>
+<li>尽可能避免代码出错</li>
+<li>使用 try catch 做异常信息捕获</li>
+</ul>
+<p>3、增加页面关键词优化</p>
 
       
     </div>
@@ -773,7 +780,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#减少HTTP请求次数或者减少请求数据的大小"><span class="nav-number">1.</span> <span class="nav-text">减少HTTP请求次数或者减少请求数据的大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于编写代码时候的一些优化技巧"><span class="nav-number">2.</span> <span class="nav-text">关于编写代码时候的一些优化技巧</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#减少HTTP请求次数或者减少请求数据的大小"><span class="nav-number">1.</span> <span class="nav-text">减少HTTP请求次数或者减少请求数据的大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于编写代码时候的一些优化技巧"><span class="nav-number">2.</span> <span class="nav-text">关于编写代码时候的一些优化技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于页面的-SEO-优化技巧"><span class="nav-number">3.</span> <span class="nav-text">关于页面的 SEO 优化技巧</span></a></li></ol></div>
             
 
           </div>
