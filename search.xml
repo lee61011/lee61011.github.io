@@ -3,7 +3,13 @@
   <entry>
     <title><![CDATA[JS中的面向对象编程]]></title>
     <url>%2F2019%2F03%2F18%2FJS%E4%B8%AD%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[JS中的堆栈内存及闭包详解]]></title>
