@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wttrmpo1j30xr0u01ky.jpg">
-<meta property="og:updated_time" content="2019-03-30T14:59:21.778Z">
+<meta property="og:updated_time" content="2019-03-31T14:08:48.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX基础知识及核心原理">
 <meta name="twitter:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wttrmpo1j30xr0u01ky.jpg">
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  949
+                  1,335
                 </span>
               
 
@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  5
                 </span>
               
             </div>
@@ -468,6 +468,22 @@
 <p>【弊端】：</p>
 <p>1、不利于SEO优化：第一次从服务器端获取的内容不包含需要动态绑定的数据，所以页面的源代码中没有这些内容，不利于SEO收录，后期通过JS添加到页面中的内容，并不会写在页面的源代码中（是源代码不是页面结构）</p>
 <p>2、交由客户端渲染，首先需要把页面呈现，然后再通过JS的异步AJAX请求获取数据，然后数据绑定，浏览器再把动态增加的部分重新渲染，无形中浪费了一些时间，没有服务器端渲染页面呈现速度快</p>
+</blockquote>
+<h2 id="基于原生JS实现AJAX"><a href="#基于原生JS实现AJAX" class="headerlink" title="基于原生JS实现AJAX"></a>基于原生JS实现AJAX</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	1.创建一个AJAX对象</span></span><br><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();		<span class="comment">//	不兼容IE6及更低版本浏览器（IE6：ActiveXObject）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	2.打开请求地址（可以理解为一些基础配置，但是并没有发送请求）</span></span><br><span class="line">xhr.open([method],[url],[<span class="keyword">async</span>],[user name],[user password]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//	3.监听AJAX状态改变，获取响应信息（获取响应头信息、获取响应主体信息）</span></span><br><span class="line">xhr.onreadystatechange=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState===<span class="number">4</span> &amp;&amp; xhr.status===<span class="number">200</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> result = xhr.responseText;	<span class="comment">//	获取响应主体中的内容</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//	4.发送AJAX请求(括号中传递的内容就是请求主体的内容)</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<p><strong><code>分析第二步中的细节点</code></strong></p>
+<blockquote>
+<p>xhr.open([method],[url],[async],[user name],[user password]);</p>
+</blockquote>
+<p>【AJAX请求方式 （method）】：</p>
+<blockquote>
+<p>1、GET系列请求（获取）</p>
+<p>​    get、delete（从服务器上删除某些资源文件）、head（只想获取服务器返回的响应头信息，响应主体内容不需要获取）……</p>
+<p>2、POST系列请求（推送）</p>
+<p>​    post、put（向服务器中增加指定的资源文件）……</p>
+<p>我们想获取一些动态展示的信息，一般使用GET请求，因为只需要向服务器端发送请求，告诉服务器端我们想要什么，服务器端就会把需要的数据返回</p>
+<p>在实现注册功能的时候，我们需要把用户输入的信息发送给服务器进行存储，服务器一般返回成功还是失败等状态，此时我们一般都是基于POST请求完成的</p>
+</blockquote>
+<blockquote>
 </blockquote>
 
       
@@ -722,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX基础知识及核心原理"><span class="nav-number">1.</span> <span class="nav-text">AJAX基础知识及核心原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX基础知识"><span class="nav-number">1.1.</span> <span class="nav-text">AJAX基础知识</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX基础知识及核心原理"><span class="nav-number">1.</span> <span class="nav-text">AJAX基础知识及核心原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX基础知识"><span class="nav-number">1.1.</span> <span class="nav-text">AJAX基础知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于原生JS实现AJAX"><span class="nav-number">2.</span> <span class="nav-text">基于原生JS实现AJAX</span></a></li></ol></div>
             
 
           </div>
