@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wttrmpo1j30xr0u01ky.jpg">
-<meta property="og:updated_time" content="2019-03-31T14:08:48.077Z">
+<meta property="og:updated_time" content="2019-04-01T15:20:06.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX基础知识及核心原理">
 <meta name="twitter:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wttrmpo1j30xr0u01ky.jpg">
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,335
+                  1,750
                 </span>
               
 
@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  6
                 </span>
               
             </div>
@@ -484,6 +484,15 @@
 <p>在实现注册功能的时候，我们需要把用户输入的信息发送给服务器进行存储，服务器一般返回成功还是失败等状态，此时我们一般都是基于POST请求完成的</p>
 </blockquote>
 <blockquote>
+<p><strong>GET 系列请求和 POST 系列请求，在项目实战中存在很多的区别：</strong></p>
+<p><em>1、GET 请求传递给服务器的内容一般没有 POST 请求传递给服务器的内容多</em></p>
+<p>​    原因：GET 请求传递给服务器内容一般都是基于   <code>url地址问号传递参数</code> 来实现的，而 POST 请求一般都是基于 <code>设置请求主体</code> 来实现的。各浏览器都有自己的关于URL最大长度的限制（谷歌：8KB、火狐：7KB、IE：2KB……）超过限制长度的部分，浏览器会自动截取掉，导致传递给服务器的数据缺失.</p>
+<p>​    理论上 POST 请求通过请求主体传递是没有大小限制的，真实项目中为了保证传输的速率，我们也会限制大小（例如：上传的资料或者图片我们会做大小的限制）</p>
+<p><em>2、GET 请求很容易出现缓存（这个缓存不可控：一般我们都不需要），而 POST 不会出现缓存（除非自己做特殊处理）；</em></p>
+<p>​    原因：GET 是通过 URL 问号传参传递给服务器信息，而 POST 是设置请求主体；设置请求主体不会出现缓存，但是 URL 传参就会。</p>
+<p>​    解决方案：每一次重新请求的时候，在URL的末尾追加一个随机数，保证每一次请求的地址不完全一致，就可以避免是从缓存中读取的数据</p>
+<p><em>3、GET 请求没有 POST 请求安全（POST也并不是十分安全，只是相对安全）</em></p>
+<p>​    原因：还是因为 GET 是 URL 传参给服务器</p>
 </blockquote>
 
       
