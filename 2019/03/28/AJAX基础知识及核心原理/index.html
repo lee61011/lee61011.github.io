@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wttrmpo1j30xr0u01ky.jpg">
-<meta property="og:updated_time" content="2019-04-01T15:20:06.477Z">
+<meta property="og:updated_time" content="2019-04-02T15:02:46.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX基础知识及核心原理">
 <meta name="twitter:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wttrmpo1j30xr0u01ky.jpg">
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,750
+                  2,175
                 </span>
               
 
@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  8
                 </span>
               
             </div>
@@ -493,6 +493,19 @@
 <p>​    解决方案：每一次重新请求的时候，在URL的末尾追加一个随机数，保证每一次请求的地址不完全一致，就可以避免是从缓存中读取的数据</p>
 <p><em>3、GET 请求没有 POST 请求安全（POST也并不是十分安全，只是相对安全）</em></p>
 <p>​    原因：还是因为 GET 是 URL 传参给服务器</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  GET 请求的缓存问题  */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	每隔一分钟重新请求服务器最新的数据，然后展示在页面中（页面某些数据实时刷新）</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        url: <span class="string">'getList?name=xxx'</span>,</span><br><span class="line">        <span class="comment">//	...</span></span><br><span class="line">        success: <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">            <span class="comment">//	第一次请求数据回来，间隔一分钟后，浏览器又发送一次请求，但是新发送的请求，不管是地址还是传递的蚕食都和第一次一样，浏览器很有可能会把上一次数据获取，而不是获取最新的数据</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,<span class="number">60000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//	解决方案：每一次重新请求的时候，在URL的末尾追加一个随机数，保证每一次请求的地址不完全一致，就可以避免是从缓存中读取的数据</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        url: <span class="string">'getList?name=xxx&amp;_='</span>+<span class="built_in">Math</span>.random(),</span><br><span class="line">        <span class="comment">//	...</span></span><br><span class="line">        success: <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,<span class="number">60000</span>)</span><br></pre></td></tr></table></figure>
+<p>【请求数据地址 （URL）】：</p>
+<blockquote>
+<p>URL：请求数据的地址（API地址），真实项目中，后台开发工程师会编写一个API文档，在API文档中汇总了获取那些数据需要使用那些地址，我们按照文档操作即可</p>
+</blockquote>
+<p>【是否同步请求 （async）】：</p>
+<blockquote>
+<p>async：异步（sync 同步），设置当前 ajax 请求时异步的还是同步的，不写默认是异步（true），如果设置为 false，则代表当前请求是同步的</p>
+</blockquote>
+<p>【用户名和密码】：</p>
+<blockquote>
+<p>用户名和密码：这两个参数一般不用，如果请求的 URL 地址所在的服务器设定了访问权限，则需要我么提供可通行的用户名和密码才可以（一般服务器都是可以允许匿名访问的）</p>
 </blockquote>
 
       
