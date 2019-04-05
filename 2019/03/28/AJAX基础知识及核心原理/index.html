@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wttrmpo1j30xr0u01ky.jpg">
-<meta property="og:updated_time" content="2019-04-04T14:44:59.467Z">
+<meta property="og:updated_time" content="2019-04-05T15:22:28.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX基础知识及核心原理">
 <meta name="twitter:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wttrmpo1j30xr0u01ky.jpg">
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,122
+                  3,343
                 </span>
               
 
@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  12
                 </span>
               
             </div>
@@ -534,6 +534,15 @@
 </blockquote>
 <p><code>AJAX 中其他常用的属性和方法</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	ajax 中总共支持几个方法？</span></span><br><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="built_in">console</span>.dir(xhr);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">【属性】：（常用的几个）</span></span><br><span class="line"><span class="comment">	1、readyState：存储的是当前 ajax 的状态码</span></span><br><span class="line"><span class="comment">	2、response/responseText/responseXML：都是用来接收服务器返回的响应主体中的内容，只是根据服务器返回内容的格式不一样，我们使用不同的属性接收即可</span></span><br><span class="line"><span class="comment">		responseText 是最常用的，接收到的结果是字符串格式的</span></span><br><span class="line"><span class="comment">		responseXML 偶尔会用到，如果服务器端返回的是 XML 文档数据，需要使用这个属性来接收</span></span><br><span class="line"><span class="comment">	3、status：记录了服务器返回的 HTTP 状态码</span></span><br><span class="line"><span class="comment">    	statusText：对返回状态码的描述</span></span><br><span class="line"><span class="comment">    4、timeout：设置当前 AJAX 请求的超时时间，假设设置时间为 3000，从ajax请求发送开始，3秒后响应主体内容还没有	返回，浏览器会把当前 ajax 请求任务强制断开</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">【方法】：（常用的几个）</span></span><br><span class="line"><span class="comment">	1、abort()：强制中断 ajax 请求</span></span><br><span class="line"><span class="comment">	2、getAllResponseHeaders()：获取全部的响应头信息（获取到的结果是一堆字符串文本）</span></span><br><span class="line"><span class="comment">	3、getResponseHeader(key)：获取指定属性名的响应头信息</span></span><br><span class="line"><span class="comment">	4、open()：打开一个 URL 地址</span></span><br><span class="line"><span class="comment">	5、overrideMimeType()：重写数据的 MIME 类型</span></span><br><span class="line"><span class="comment">	6、send()：发送 ajax 请求（括号中书写的内容是客户端基于请求主体把信息传递给服务器）</span></span><br><span class="line"><span class="comment">	7、setRequestHeader(key,value)：设置请求头信息（可以是设置的自定义请求头信息）</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">【事件】：（常用的几个）</span></span><br><span class="line"><span class="comment">	1、onabort；当 ajax 被中断请求触发这个事件</span></span><br><span class="line"><span class="comment">	2、onreadystatechange：ajax 状态发生改变，会触发这个事件</span></span><br><span class="line"><span class="comment">	3、ontimeout：当 ajax 请求超时，会触发这个事件</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="JS-中常用的编码解码方法"><a href="#JS-中常用的编码解码方法" class="headerlink" title="JS 中常用的编码解码方法"></a>JS 中常用的编码解码方法</h3><blockquote>
+<p><em>正常的编码解码（非加密）</em></p>
+<p>1、escape / unescape：主要是把中文汉字进行编码和解码（一般只有JS语言支持，经常应用于前端页面通信时候的中文汉字编码）</p>
+<p>2、encodeURI / decodeURI：基本上所有的编程语言都支持</p>
+<p>3、encodeURIComponent / decodeURIComponent：和第二中方式非常类似，区别在于 encodeURIComponent 会把一些保留字符（例如： : / 等）也进行编码处理</p>
+<p><em>也可以通过加密的方法进行编码解码</em></p>
+<p>1、可逆转加密（一般都是团队自己玩的规则）</p>
+<p>2、不可逆转加密（一般都是基于 MD5 加密完成的，可能会把 MD5 加密后的结果进行二次加密）（引入 md5 的js文件，使用 hex_md5(str) 对字符串进行加密；md5 加密的数据是不可解密的）</p>
+</blockquote>
 
       
     </div>
@@ -787,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX基础知识及核心原理"><span class="nav-number">1.</span> <span class="nav-text">AJAX基础知识及核心原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX基础知识"><span class="nav-number">1.1.</span> <span class="nav-text">AJAX基础知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于原生JS实现AJAX"><span class="nav-number">2.</span> <span class="nav-text">基于原生JS实现AJAX</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX基础知识及核心原理"><span class="nav-number">1.</span> <span class="nav-text">AJAX基础知识及核心原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX基础知识"><span class="nav-number">1.1.</span> <span class="nav-text">AJAX基础知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于原生JS实现AJAX"><span class="nav-number">2.</span> <span class="nav-text">基于原生JS实现AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-中常用的编码解码方法"><span class="nav-number">2.1.</span> <span class="nav-text">JS 中常用的编码解码方法</span></a></li></ol></li></ol></div>
             
 
           </div>
