@@ -104,7 +104,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wttrmpo1j30xr0u01ky.jpg">
 <meta property="og:image" content="c:/Users/lee61011/AppData/Local/Temp/1552973955833.png">
-<meta property="og:updated_time" content="2019-04-08T15:19:02.006Z">
+<meta property="og:updated_time" content="2019-04-10T14:52:18.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX基础知识及核心原理">
 <meta name="twitter:image" content="http://wx1.sinaimg.cn/large/005ywkXxly1g0wttrmpo1j30xr0u01ky.jpg">
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,557
+                  4,558
                 </span>
               
 
@@ -443,14 +443,14 @@
 </blockquote>
 <p><code>xml：可扩展的标记语言</code></p>
 <blockquote>
-<p>作用是用来存储数据的（通过自己扩展的标记名称清晰的展示出数据结构）；ajax 之所以成为异步的 js 和 xml，主要是因为 当初最开始用 ajax 实现客户端和服务器端数据通信的时候，传输的数据格式一般都是 xml 格式的数据，我们把它成为异步 js 和 xml。（现在一般都是基于 JSON 格式来进行数据传输的）</p>
+<p>作用是用来存储数据的（通过自己扩展的标记名称清晰的展示出数据结构）；ajax 之所以称为异步的 js 和 xml，主要是因为 当初最开始用 ajax 实现客户端和服务器端数据通信的时候，传输的数据格式一般都是 xml 格式的数据，我们把它称为异步 js 和 xml。（现在一般都是基于 JSON 格式来进行数据传输的）</p>
 </blockquote>
 <p><code>局部刷新</code></p>
 <blockquote>
 <p><strong>局部刷新 VS 全局刷新：</strong></p>
 <p><em>在非完全前后端分离项目中，前端开发只需要完成页面的制作，并且把一些基础的人机交互效果使用 js 完成即可，页面中需要动态呈现内容的部分，都是交给后台开发工程师做数据绑定和基于服务器进行渲染的（服务器端渲染）</em></p>
 <p>【优势】：</p>
-<p>1、动态展示的数据在页面的源代码中可以看见，有利于 SEO 优化推广（有利于搜索引擎的收录和抓去）</p>
+<p>1、动态展示的数据在页面的源代码中可以看见，有利于 SEO 优化推广（有利于搜索引擎的收录和抓取）</p>
 <p>2、从服务器端获取的结果就已经是最后要呈现的结果了，不需要客户端做额外的事情，所以页面加载速度快（前提是服务器端处理的速度够快，能够处理过来），所以类似于京东、淘宝这些网站，首屏数据一般都是经由服务器端渲染的</p>
 <p>【弊端】：</p>
 <p>1、如果页面中存在需要实时更新的数据，每一次想要展示最新的数据，页面都要重新的刷新一次，这样肯定是不行的</p>
@@ -467,8 +467,8 @@
 <p>1、我们可以根据需求，任意修改页面中某一部分的内容（例如实时刷新），整体页面不刷新，性能好，体验好（所有表单验证。需要时时刷新等需求都要基于ajax实现）</p>
 <p>2、有利于开发，有利于开发的效率（可以同时进行开发）</p>
 <p>【弊端】：</p>
-<p>1、不利于SEO优化：第一次从服务器端获取的内容不包含需要动态绑定的数据，所以页面的源代码中没有这些内容，不利于SEO收录，后期通过JS添加到页面中的内容，并不会写在页面的源代码中（是源代码不是页面结构）</p>
-<p>2、交由客户端渲染，首先需要把页面呈现，然后再通过JS的异步AJAX请求获取数据，然后数据绑定，浏览器再把动态增加的部分重新渲染，无形中浪费了一些时间，没有服务器端渲染页面呈现速度快</p>
+<p>1、不利于 SEO 优化：第一次从服务器端获取的内容不包含需要动态绑定的数据，所以页面的源代码中没有这些内容，不利于 SEO 收录，后期通过 JS 添加到页面中的内容，并不会写在页面的源代码中（是源代码不是页面结构）</p>
+<p>2、交由客户端渲染，首先需要把页面呈现，然后再通过 JS 的异步 AJAX 请求获取数据，然后数据绑定，浏览器再把动态增加的部分重新渲染，无形中浪费了一些时间，没有服务器端渲染页面呈现速度快</p>
 </blockquote>
 <h2 id="基于原生JS实现AJAX"><a href="#基于原生JS实现AJAX" class="headerlink" title="基于原生JS实现AJAX"></a>基于原生JS实现AJAX</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	1.创建一个AJAX对象</span></span><br><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();		<span class="comment">//	不兼容IE6及更低版本浏览器（IE6：ActiveXObject）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	2.打开请求地址（可以理解为一些基础配置，但是并没有发送请求）</span></span><br><span class="line">xhr.open([method],[url],[<span class="keyword">async</span>],[user name],[user password]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//	3.监听AJAX状态改变，获取响应信息（获取响应头信息、获取响应主体信息）</span></span><br><span class="line">xhr.onreadystatechange=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState===<span class="number">4</span> &amp;&amp; xhr.status===<span class="number">200</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> result = xhr.responseText;	<span class="comment">//	获取响应主体中的内容</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//	4.发送AJAX请求(括号中传递的内容就是请求主体的内容)</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
 <p><strong><code>分析第二步中的细节点</code></strong></p>
