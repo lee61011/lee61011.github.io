@@ -106,9 +106,7 @@
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g2fb0z8mc3j30nf09u3zu.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/005ywkXxly1g2fb1zouazj30nu05s746.jpg">
 <meta property="og:image" content="c:/Users/lee61011/AppData/Local/Temp/1553505413369.png">
-<meta property="og:image" content="c:/Users/lee61011/AppData/Local/Temp/1553505571139.png">
 <meta property="og:image" content="http://jspang.com/static/upload/20181105/1KK9K0_EZqM6A7TAPXo7Arq0.png">
-<meta property="og:image" content="http://jspang.com/static/upload/20181105/mY5Qhlb66tRSXFWbmnZfUT2W.png">
 <meta property="og:image" content="http://jspang.com/static/upload/20181031/Exnsbuo_aOB3s75oTd4r6JCE.png">
 <meta property="og:image" content="http://jspang.com/static/upload/20181031/6-jjLcq_aEZHibMxVyy_3P78.png">
 <meta property="og:image" content="c:/Users/lee61011/AppData/Local/Temp/1553563138612.png">
@@ -116,7 +114,7 @@
 <meta property="og:image" content="c:/Users/lee61011/AppData/Local/Temp/1553566857947.png">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/005ywkXxly1g2ggo94ygfj31400u0di4.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/005ywkXxly1g2ggofnek1j31400u0ace.jpg">
-<meta property="og:updated_time" content="2019-04-26T15:47:22.509Z">
+<meta property="og:updated_time" content="2019-05-01T13:11:19.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter开发环境搭建">
 <meta name="twitter:image" content="http://wx2.sinaimg.cn/large/005ywkXxly1g22ko8uaocj318g0ga754.jpg">
@@ -406,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  847
+                  932
                 </span>
               
 
@@ -422,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -454,18 +452,19 @@
 <p>下载完成后打开，直接根据提示一直下一步，默认安装在 C 盘就可以了；安装完成后，在 命令行中输入 <code>java -version</code> 如果输出如下图所示版本信息，说明安装成功；否则说明安装失败</p>
 <p><img src="http://wx3.sinaimg.cn/mw690/005ywkXxly1g2fb1zouazj30nu05s746.jpg" alt="检测java安装"></p>
 <h2 id="下载安装-FlutterSDK"><a href="#下载安装-FlutterSDK" class="headerlink" title="下载安装 FlutterSDK"></a>下载安装 FlutterSDK</h2><ol>
-<li>在 <a href="https://flutter.io/sdk-archive/#windows" target="_blank" rel="noopener">官网</a> 下载 Flutter 安装包</li>
-<li>将安装包zip解压到你想安装Flutter SDK的路径 </li>
-<li>在Flutter安装目录的<code>flutter</code>文件下找到<code>flutter_console.bat</code>，双击运行并启动flutter命令行，接下来，你就可以在Flutter命令行运行flutter命令了。 （flutter -h）</li>
-<li>配置<code>环境变量</code>，如果你想在任何地方都可以执行<code>Flutter</code>命令，你需要把Flutter SDK的目录配到环境变量中的path条目下。<img src="C:\Users\lee61011\AppData\Local\Temp\1553505413369.png" alt="1553505413369"></li>
+<li>在 <a href="https://flutter.io/sdk-archive/#windows" target="_blank" rel="noopener">官网</a> 下载 <code>Flutter</code>安装包</li>
+<li>将安装包zip解压到你想安装<code>Flutter SDK</code>的路径 </li>
+<li>在Flutter安装目录的<code>flutter</code>文件下找到<code>flutter_console.bat</code>，双击运行并启动 flutter 命令行，接下来，你就可以在 Flutter 命令行运行 flutter 命令了。 <code>flutter -h</code></li>
+<li>配置<code>环境变量</code>，如果你想在任何地方都可以执行<code>Flutter</code>命令，你需要把<code>Flutter SDK</code>的目录配到环境变量中的<code>path</code>条目下。<img src="C:\Users\lee61011\AppData\Local\Temp\1553505413369.png" alt="1553505413369"></li>
 </ol>
 <h2 id="进行-Flutter-doctor-的测试"><a href="#进行-Flutter-doctor-的测试" class="headerlink" title="进行 Flutter doctor 的测试"></a>进行 Flutter doctor 的测试</h2><blockquote>
-<p>flutter doctor</p>
+<p>在终端中输入<code>flutter doctor</code>，你可能会得到下面类似的结果。</p>
 </blockquote>
-<p><img src="C:\Users\lee61011\AppData\Local\Temp\1553505571139.png" alt="1553505571139"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Android toolchain - develop for Android devices</span><br><span class="line">    • Android SDK at D:\Android\sdk</span><br><span class="line">    ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</span><br><span class="line">    • Try re-installing or updating your Android SDK,</span><br><span class="line">      visit https://flutter.io/setup/#android-setup for detailed instructions.</span><br></pre></td></tr></table></figure>
+<p>这时候你得到的x比这个会多一些，因为我们还没有安装<code>Android studio</code></p>
 <h2 id="Android-Studio-的安装"><a href="#Android-Studio-的安装" class="headerlink" title="Android Studio 的安装"></a>Android Studio 的安装</h2><ol>
 <li>下载<code>Android Studio</code>：直接到官网进行下载就可以了。下载地址：<a href="https://developer.android.com/" target="_blank" rel="noopener">https://developer.android.com/</a>进入后向下拉，然后看到如下界面，点击红圈处进行下载。<img src="http://jspang.com/static/upload/20181105/1KK9K0_EZqM6A7TAPXo7Arq0.png" alt="alt"></li>
-<li>安装Android Studio 软件：这个安装也就是差不多下一步下一步，如果你真的不会，给你个比较详细的教程。<a href="https://www.cnblogs.com/xiadewang/p/7820377.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiadewang/p/7820377.html</a>，（需要注意的是，到下图时，会变的很慢，它去谷歌下载了很多包，我大概下载了30分钟；这一步可能会出现一些错误，多试几次就好了）<img src="http://jspang.com/static/upload/20181105/mY5Qhlb66tRSXFWbmnZfUT2W.png" alt="alt"></li>
+<li>安装Android Studio 软件：这个安装也就是差不多下一步下一步，可以参考教程教程: <a href="https://www.cnblogs.com/xiadewang/p/7820377.html&gt;，（需要注意的是，到下图时，会变的很慢，它去谷歌下载了很多包；这一步可能会出现一些错误，多试几次就好了）![alt](http://jspang.com/static/upload/20181105/mY5Qhlb66tRSXFWbmnZfUT2W.png)" target="_blank" rel="noopener">https://www.cnblogs.com/xiadewang/p/7820377.html&gt;，（需要注意的是，到下图时，会变的很慢，它去谷歌下载了很多包；这一步可能会出现一些错误，多试几次就好了）![alt](http://jspang.com/static/upload/20181105/mY5Qhlb66tRSXFWbmnZfUT2W.png)</a></li>
 <li>打开Android Stuido 软件，然后找到Plugin的配置，搜索Flutter插件。<img src="http://jspang.com/static/upload/20181031/Exnsbuo_aOB3s75oTd4r6JCE.png" alt="alt">出现上图，点中间的<code>Search in repositories</code>,然后点击安装。<img src="http://jspang.com/static/upload/20181031/6-jjLcq_aEZHibMxVyy_3P78.png" alt="alt">安装完成后，你需要重新启动一下Android Studio软件。</li>
 </ol>
 <h2 id="安装Android证书"><a href="#安装Android证书" class="headerlink" title="安装Android证书"></a>安装Android证书</h2><p>安装好Android Studio后，再次打开终端（命令行），输入<code>flutter doctor</code>,这时候的x会明显减少，但是你还是会遇到1-2个，其中有一个就是提示没有安装证书。安装证书只要在终端里执行下面的命令。</p>
