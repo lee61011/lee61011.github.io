@@ -105,7 +105,7 @@
 <meta property="og:description" content="常见的 web 安全漏洞可以分为 客户端漏洞 和 服务端漏洞. 客户端漏洞包括 XSS、CSRF、点击劫持、URL跳转 等; 服务端漏洞包括 SQL注入、命令注入、文件操作类 等.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/lee61011/test0804/master/images/hack.jpg">
-<meta property="og:updated_time" content="2019-04-28T14:59:55.483Z">
+<meta property="og:updated_time" content="2019-05-02T13:36:09.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见的web安全漏洞">
 <meta name="twitter:description" content="常见的 web 安全漏洞可以分为 客户端漏洞 和 服务端漏洞. 客户端漏洞包括 XSS、CSRF、点击劫持、URL跳转 等; 服务端漏洞包括 SQL注入、命令注入、文件操作类 等.">
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,024
+                  1,194
                 </span>
               
 
@@ -494,7 +494,7 @@
 <p>点击劫持是一种视觉欺骗的攻击手段。攻击者将需要攻击的网站通过 iframe 嵌套的方式嵌入自己的网页中，并将 iframe 设置为透明，在页面中透出一个按钮诱导用户点击。</p>
 <h2 id="URL跳转漏洞"><a href="#URL跳转漏洞" class="headerlink" title="URL跳转漏洞"></a>URL跳转漏洞</h2><p><strong>定义:</strong> 借助未验证的URL跳转, 将应用程序引导到不安全的第三方区域, 从而导致的安全问题.</p>
 <p><strong>原理：</strong>黑客利用 URL 跳转漏洞来诱导安全意识低的用户点击，导致用户信息泄露或者资金的流失。其原理是黑客构建恶意链接（链接需要进行伪装，尽可能迷惑），发在 QQ 群或者是浏览量多的贴吧论坛中，安全意识低的用户点击后，经过服务器或者浏览器解析后，跳到恶意的网站中。</p>
-<h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><p>SQL lnjection 是一种常见的 Web 安全漏洞, 攻击者利用这个漏洞, 可以访问或者修改数据, 或者利用潜在的数据库漏洞进行攻击.</p>
+<h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><p>SQL 注入是一种常见的 Web 安全漏洞, 攻击者利用这个漏洞, 可以访问或者修改数据, 或者利用潜在的数据库漏洞进行攻击.</p>
 <p><strong>一次SQL注入的过程:</strong></p>
 <ol>
 <li>获取用户请求参数</li>
@@ -508,6 +508,23 @@
 </ol>
 <p><strong>SQL注入的本质</strong></p>
 <p>数据和代码未分离, 即数据当做了代码来执行.</p>
+<p><strong>SQL注入的危害：</strong></p>
+<ul>
+<li>获取数据库信息</li>
+<li>管理员后台用户名和密码</li>
+<li>获取其他数据库敏感信息：用户名、密码、手机号码、身份证、银行卡信息……</li>
+<li>整个数据库：脱库</li>
+<li>获取服务器权限</li>
+<li>植入 Webshell，获取服务器后门</li>
+<li>读取服务器敏感文件</li>
+</ul>
+<p><strong>如何防御？</strong></p>
+<ul>
+<li>严格限制 Web 应用的数据库的操作权限</li>
+<li>后端代码检查输入的数据是否符合预期</li>
+<li>对进入数据库的特殊字符进行转义处理，或者编码转换</li>
+<li>所有的查询语句建议使用数据库提供的参数化查询接口</li>
+</ul>
 <hr>
 <blockquote>
 <p>参考链接： <a href="https://mp.weixin.qq.com/s/JttR5idAeAWLHUVu-_7CHA" target="_blank" rel="noopener">常见六大 Web 安全攻防解析</a></p>
