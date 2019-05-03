@@ -114,7 +114,7 @@
 <meta property="og:image" content="c:/Users/lee61011/AppData/Local/Temp/1553566857947.png">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/005ywkXxly1g2ggo94ygfj31400u0di4.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/005ywkXxly1g2ggofnek1j31400u0ace.jpg">
-<meta property="og:updated_time" content="2019-05-01T13:11:19.865Z">
+<meta property="og:updated_time" content="2019-05-03T14:20:44.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter开发环境搭建">
 <meta name="twitter:image" content="http://wx2.sinaimg.cn/large/005ywkXxly1g22ko8uaocj318g0ga754.jpg">
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  932
+                  912
                 </span>
               
 
@@ -464,15 +464,15 @@
 <p>这时候你得到的x比这个会多一些，因为我们还没有安装<code>Android studio</code></p>
 <h2 id="Android-Studio-的安装"><a href="#Android-Studio-的安装" class="headerlink" title="Android Studio 的安装"></a>Android Studio 的安装</h2><ol>
 <li>下载<code>Android Studio</code>：直接到官网进行下载就可以了。下载地址：<a href="https://developer.android.com/" target="_blank" rel="noopener">https://developer.android.com/</a>进入后向下拉，然后看到如下界面，点击红圈处进行下载。<img src="http://jspang.com/static/upload/20181105/1KK9K0_EZqM6A7TAPXo7Arq0.png" alt="alt"></li>
-<li>安装Android Studio 软件：这个安装也就是差不多下一步下一步，可以参考教程教程: <a href="https://www.cnblogs.com/xiadewang/p/7820377.html&gt;，（需要注意的是，到下图时，会变的很慢，它去谷歌下载了很多包；这一步可能会出现一些错误，多试几次就好了）![alt](http://jspang.com/static/upload/20181105/mY5Qhlb66tRSXFWbmnZfUT2W.png)" target="_blank" rel="noopener">https://www.cnblogs.com/xiadewang/p/7820377.html&gt;，（需要注意的是，到下图时，会变的很慢，它去谷歌下载了很多包；这一步可能会出现一些错误，多试几次就好了）![alt](http://jspang.com/static/upload/20181105/mY5Qhlb66tRSXFWbmnZfUT2W.png)</a></li>
+<li>安装Android Studio 软件：这个安装也就是差不多下一步下一步，可以参考教程教程: <a href="https://www.cnblogs.com/xiadewang/p/7820377.html，（需要注意的是，到下图时，会变的很慢，它去谷歌下载了很多包；这一步可能会出现一些错误，多试几次就好了）![alt](http://jspang.com/static/upload/20181105/mY5Qhlb66tRSXFWbmnZfUT2W.png)" target="_blank" rel="noopener">https://www.cnblogs.com/xiadewang/p/7820377.html，（需要注意的是，到下图时，会变的很慢，它去谷歌下载了很多包；这一步可能会出现一些错误，多试几次就好了）![alt](http://jspang.com/static/upload/20181105/mY5Qhlb66tRSXFWbmnZfUT2W.png)</a></li>
 <li>打开Android Stuido 软件，然后找到Plugin的配置，搜索Flutter插件。<img src="http://jspang.com/static/upload/20181031/Exnsbuo_aOB3s75oTd4r6JCE.png" alt="alt">出现上图，点中间的<code>Search in repositories</code>,然后点击安装。<img src="http://jspang.com/static/upload/20181031/6-jjLcq_aEZHibMxVyy_3P78.png" alt="alt">安装完成后，你需要重新启动一下Android Studio软件。</li>
 </ol>
 <h2 id="安装Android证书"><a href="#安装Android证书" class="headerlink" title="安装Android证书"></a>安装Android证书</h2><p>安装好Android Studio后，再次打开终端（命令行），输入<code>flutter doctor</code>,这时候的x会明显减少，但是你还是会遇到1-2个，其中有一个就是提示没有安装证书。安装证书只要在终端里执行下面的命令。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor --android-licenses</span><br></pre></td></tr></table></figure>
-<p>然后会提示你选Y/N，不要犹豫，一律选择Y，就可以把证书安装好。（说的都是一大堆一大堆的英文，我也看不懂是啥）</p>
+<p>然后会提示你选Y/N，不要犹豫，一律选择Y，就可以把证书安装好。</p>
 <p>到这里windows的开发环境就安装的差不多了</p>
-<h2 id="安装AVD虚拟机-Flutter跑起来"><a href="#安装AVD虚拟机-Flutter跑起来" class="headerlink" title="安装AVD虚拟机 Flutter跑起来"></a>安装AVD虚拟机 Flutter跑起来</h2><p>打开 Android Studio，选择 Start a new Flutter project；</p>
-<p>打第二个窗口后，选择第一个选项 Flutter Application（flutter应用）；这步完成后，系统就会自动为我们创建一个Flutter项目（新建项目的过程也是很慢的，如果失败，可以多反复试几次）。 </p>
+<h2 id="安装AVD虚拟机-Flutter跑起来"><a href="#安装AVD虚拟机-Flutter跑起来" class="headerlink" title="安装AVD虚拟机 Flutter跑起来"></a>安装AVD虚拟机 Flutter跑起来</h2><p>打开 <code>Android Studio</code>，选择 <code>Start a new Flutter project</code>；</p>
+<p>打第二个窗口后，选择第一个选项 <code>Flutter Application</code>（flutter应用）；这步完成后，系统就会自动为我们创建一个Flutter项目（新建项目的过程也是很慢的，如果失败，可以多反复试几次）。 </p>
 <h3 id="安装-AVD-虚拟机"><a href="#安装-AVD-虚拟机" class="headerlink" title="安装 AVD 虚拟机"></a>安装 AVD 虚拟机</h3><ol>
 <li><p>现在需要一个虚拟机来运行我们的程序，可以点击Android Studio中的上方菜单<code>tool</code> -<code>AVD Manager</code>选项。</p>
 <p><img src="C:\Users\lee61011\AppData\Local\Temp\1553563138612.png" alt="1553563138612"></p>
