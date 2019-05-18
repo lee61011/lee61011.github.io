@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="lee61011">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
-<meta property="og:updated_time" content="2019-05-17T15:49:52.094Z">
+<meta property="og:updated_time" content="2019-05-18T15:48:30.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题总结">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  293
+                  468
                 </span>
               
 
@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -444,7 +444,11 @@
 <li><p><code>一个完整的 HTTP 事务：</code></p>
 <p>域名解析  ==&gt;  发起 TCP 的三次握手  ==&gt;  建立 TCP 连接后发起 http 请求  ==&gt;  服务器响应 http 请求，浏览器得到 html 代码  ==&gt;  浏览器解析 html 代码，并请求 html 代码中的资源（如 js，css，图片等）  ==&gt;  浏览器对页面进行渲染呈现给用户</p>
 </li>
-<li><p><code></code></p>
+<li><p><code>动画的最小间隔时间设置为多少合适?</code></p>
+<p>多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms</p>
+</li>
+<li><p><code>history.go() 与 history.back() 的区别</code></p>
+<p>history.back(-1)      //直接返回当前页的上一页，数据全部消息，是个新页面<br>history.go(-1)          //也是返回当前页的上一页，不过表单里的数据全部还在</p>
 </li>
 <li><p><code>当你设计一个组件的时候你会考虑哪些方面</code></p>
 <p>兼容性、可复用性、稳定性、安全等方面……</p>
@@ -456,7 +460,11 @@
 <li><p><code>实现下面的方法：</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	let a = [1,2,3]</span></span><br><span class="line"><span class="comment">//	console.log( a.fnName() )  输出  1,2,3,1,4,9</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.fnName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">this</span>, <span class="keyword">this</span>.map(<span class="function"><span class="params">item</span> =&gt;</span> item * item)].flat()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
+<li><p><code>下列代码的输出分别是什么?</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	some()</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].some( <span class="function"><span class="params">item</span> =&gt;</span> item &lt; <span class="number">3</span> )		<span class="comment">//	true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	every()</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].every( <span class="function"><span class="params">item</span> =&gt;</span> item &gt; <span class="number">2</span> )		<span class="comment">//	false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	filter()</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].filter( <span class="function"><span class="params">item</span> =&gt;</span> item &gt; <span class="number">2</span> )	<span class="comment">//	3,4,5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	map()</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map( <span class="function"><span class="params">item</span> =&gt;</span> item * item )		<span class="comment">//	1,4,9</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>3. </p>
 
       
     </div>
