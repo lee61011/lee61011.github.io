@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[react简书项目开发笔记]]></title>
+    <url>%2F2019%2F05%2F21%2Freact%E7%AE%80%E4%B9%A6%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[项目目录搭建1234npx create-react-app react-jianshucd react-jianshu# 下载 styled-components 管理样式引用npm install styled-components --save 123456789101112131415// style.js// 将 index.css 中的样式写在 style.js 中，在 index.js 文件中引入// styled-components 4.x版本将原来的injectGlobal方法用createGlobalStyle替换了。用法上也有一些不同// 使用 createGlobalStyle 生成全局样式import &#123; createGlobalStyle &#125; from 'styled-components';createGlobalStyle` 这里写的是 reset.css 代码，百度搜索复制代码`// index.jsimport React from 'react';import './style';import './statics/iconfont/iconfont.css'ReactDOM.render(&lt;App /&gt;, document.getElementById('root')); ##]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[面试题总结]]></title>
     <url>%2F2019%2F05%2F16%2F%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[基础篇 JavaScript 中的数据类型有哪些，typeof(null) 的值是什么? javascript 中的数据类型：null、undefined、boolean、number、string、symbol typeof(null) = &#39;object&#39; flex 常用的方法和属性有哪些? 12345flex-direction: row | row-reverse | column | column-reverse;flex-wrap: nowrap | wrap | wrap-reverse;justify-content: flex-start | flex-end | center | space-between | space-around;align-items: flex-start | flex-end | center | baseline | stretch;align-content: flex-start | flex-end | center | space-between | space-around | stretch; Flex 布局教程：语法篇 一个完整的 HTTP 事务： 域名解析 ==&gt; 发起 TCP 的三次握手 ==&gt; 建立 TCP 连接后发起 http 请求 ==&gt; 服务器响应 http 请求，浏览器得到 html 代码 ==&gt; 浏览器解析 html 代码，并请求 html 代码中的资源（如 js，css，图片等） ==&gt; 浏览器对页面进行渲染呈现给用户 动画的最小间隔时间设置为多少合适? 多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms history.go() 与 history.back() 的区别 history.back(-1) //直接返回当前页的上一页，数据全部消息，是个新页面history.go(-1) //也是返回当前页的上一页，不过表单里的数据全部还在 当你设计一个组件的时候你会考虑哪些方面 兼容性、可复用性、稳定性、安全等方面……前端组件设计原则： 框架选型的时候你会考虑哪些方面 大前端架构思考与选择： 代码题 实现下面的方法： 12345// let a = [1,2,3]// console.log( a.fnName() ) 输出 1,2,3,1,4,9Array.prototype.fnName = function() &#123; return [this, this.map(item =&gt; item * item)].flat()&#125; 下列代码的输出分别是什么? 1234567891011// some()[1,2,3].some( item =&gt; item &lt; 3 ) // true// every()[1,2,3].every( item =&gt; item &gt; 2 ) // false// filter()[1,2,3,4,5].filter( item =&gt; item &gt; 2 ) // 3,4,5// map()[1,2,3].map( item =&gt; item * item ) // 1,4,9 3.]]></content>
