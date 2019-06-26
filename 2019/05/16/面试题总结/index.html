@@ -104,7 +104,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2019-06-25T15:51:40.894Z">
+<meta property="og:updated_time" content="2019-06-26T15:31:27.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题总结">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,914
+                  2,041
                 </span>
               
 
@@ -520,7 +520,7 @@
 <li><p><code>原型/原型链</code></p>
 <p><em>原型：</em> 无论什么时候，只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个 prototype 属性，这个属性指向函数的原型对象。在默认情况下，所有原型对象都会自动获得一个 constructor（构造函数）属性，这个属性是一个指向 prototype 属性所在函数的指针<br><em>原型链：</em>原型链的基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法<br>构造函数、原型和实例的关系：每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。如果让原型对象等于另一个类型的实例，那么此时的原型对象将包含一个指向另一个原型的指针，相应地，另一个原型中也包含着一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么上述关系依然成立，如此层层递进，就构成了实例与原型的链条。这就是所谓原型链的基本概念。</p>
 </li>
-<li><p><code>深拷贝</code></p>
+<li><p><code>深拷贝</code><br><em>浅拷贝：</em>所谓的浅拷贝就是复制一份引用数据类型的地址，当改变了内存中数据的某一个值得话，也会影响到另一个对象<br><em>深拷贝：</em>所谓的深拷贝就是复制一份引用数据类型的数据，当改变了数据的某一个值得话，不会影响到另一个对象（注意深拷贝是拷贝的数据，而不是索引，浅拷贝拷贝的是索引而不是数据）</p>
 <p>这个问题通常可以通过 <code>JSON.parse(JSON.stringify(object))</code> 来解决。但是这个方法也是有局限性的：会忽略 undefined、会忽略 symbol、不能序列化函数、不能解决循环引用的对象。在通常情况下，复杂数据都是可以序列化的，所以这个函数可以解决大部分问题，并且该函数是内置函数中处理深拷贝性能最快的。</p>
 <p>当然如果你的数据中含有以上三种情况下，可以使用 <a href="https://lodash.com/docs##cloneDeep" target="_blank" rel="noopener">lodash 的深拷贝函数</a>。</p>
 <p>如果你所需拷贝的对象含有内置类型并且不包含函数，可以使用 <code>MessageChannel</code></p>
