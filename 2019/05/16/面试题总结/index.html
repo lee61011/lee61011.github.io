@@ -104,7 +104,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2019-06-26T15:31:27.077Z">
+<meta property="og:updated_time" content="2019-07-06T15:55:56.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题总结">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,041
+                  2,319
                 </span>
               
 
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  9
                 </span>
               
             </div>
@@ -534,10 +534,21 @@
 </li>
 </ol>
 <h3 id="框架基础"><a href="#框架基础" class="headerlink" title="框架基础"></a>框架基础</h3><ol>
-<li><code>Vue 生命周期</code><br><img src="https://cn.vuejs.org/images/lifecycle.png" alt=""></li>
-<li><code>Vue 组件传值</code><br><a href="https://juejin.im/post/5a427cf6f265da4327187dcc" target="_blank" rel="noopener">https://juejin.im/post/5a427cf6f265da4327187dcc</a></li>
-<li><code>Vuex</code><br><a href="https://segmentfault.com/a/1190000009404727" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009404727</a></li>
-<li><code>React</code><br><a href="https://segmentfault.com/a/1190000016885832" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016885832</a></li>
+<li><p><code>Vue 生命周期</code><br><img src="https://cn.vuejs.org/images/lifecycle.png" alt=""></p>
+</li>
+<li><p><code>Vue 组件传值</code><br><a href="https://juejin.im/post/5a427cf6f265da4327187dcc" target="_blank" rel="noopener">https://juejin.im/post/5a427cf6f265da4327187dcc</a></p>
+</li>
+<li><p><code>Vuex</code><br><a href="https://segmentfault.com/a/1190000009404727" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009404727</a></p>
+</li>
+<li><p><code>Vue 双向数据绑定原理</code><br>vue实现双向数据绑定的原理就是利用了 Object.defineProperty() 这个方法重新定义了对象获取属性值(get)和设置属性值(set)的操作来实现的。 </p>
+<p>在MDN上对该方法的说明是：Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。 </p>
+<p>它接收三个参数，要操作的对象，要定义或修改的对象属性名，属性描述符。重点就是最后的属性描述符。 </p>
+<p>属性描述符是一个对象，主要有两种形式：数据描述符和存取描述符。这两种对象只能选择一种使用，不能混合两种描述符的属性同时使用。上面说的get和s </p>
+<p>et就是属于存取描述符对象的属性。 </p>
+<p>然后我们可以通过在存取描述符中的get和set方法内写入自定义的逻辑来实现对象获取属性和设置属性时的行为。</p>
+</li>
+<li><p><code>React</code><br><a href="https://segmentfault.com/a/1190000016885832" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016885832</a></p>
+</li>
 </ol>
 <h3 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h3><ol>
 <li><p><code>一个完整的 HTTP 事务：</code></p>
