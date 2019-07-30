@@ -104,7 +104,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2019-07-06T15:55:56.120Z">
+<meta property="og:updated_time" content="2019-07-30T14:31:26.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题总结">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,319
+                  2,399
                 </span>
               
 
@@ -567,6 +567,11 @@
 </li>
 <li><p><code>下列代码的输出分别是什么?</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	some()</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].some( <span class="function"><span class="params">item</span> =&gt;</span> item &lt; <span class="number">3</span> )		<span class="comment">//	true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	every()</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].every( <span class="function"><span class="params">item</span> =&gt;</span> item &gt; <span class="number">2</span> )		<span class="comment">//	false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	filter()</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].filter( <span class="function"><span class="params">item</span> =&gt;</span> item &gt; <span class="number">2</span> )	<span class="comment">//	3,4,5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	map()</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map( <span class="function"><span class="params">item</span> =&gt;</span> item * item )		<span class="comment">//	1,4,9</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="3">
+<li><p><code>数组元素去重（限制最多一次循环）</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* indexOf 处理（不兼容 IE678） */</span></span><br><span class="line"><span class="keyword">var</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ary.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> cur = ary[i];</span><br><span class="line">    <span class="keyword">var</span> curNextAry = ary.slice(i+<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (curNextAry.indexOf(cur) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">        ary.splice(i,<span class="number">1</span>);</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
