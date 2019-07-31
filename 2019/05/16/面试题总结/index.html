@@ -104,7 +104,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2019-07-30T14:31:26.629Z">
+<meta property="og:updated_time" content="2019-07-31T10:32:45.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题总结">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,399
+                  2,442
                 </span>
               
 
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  10
                 </span>
               
             </div>
@@ -571,7 +571,7 @@
 </ol>
 <ol start="3">
 <li><p><code>数组元素去重（限制最多一次循环）</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* indexOf 处理（不兼容 IE678） */</span></span><br><span class="line"><span class="keyword">var</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ary.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> cur = ary[i];</span><br><span class="line">    <span class="keyword">var</span> curNextAry = ary.slice(i+<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (curNextAry.indexOf(cur) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">        ary.splice(i,<span class="number">1</span>);</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* indexOf 处理（不兼容 IE678） */</span></span><br><span class="line"><span class="keyword">var</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ary.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> cur = ary[i];</span><br><span class="line">    <span class="keyword">var</span> curNextAry = ary.slice(i+<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (curNextAry.indexOf(cur) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">        ary.splice(i,<span class="number">1</span>);</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 前后对比法 */</span></span><br><span class="line">ary = ary.sort(<span class="function">(<span class="params">a,b</span>) =&gt;</span> a - b);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ary.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (ary[i] === ary[i+<span class="number">1</span>]) &#123;</span><br><span class="line">        ary.splice(i+<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
