@@ -104,7 +104,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2019-07-31T10:32:45.962Z">
+<meta property="og:updated_time" content="2019-08-01T04:00:36.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题总结">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,442
+                  2,443
                 </span>
               
 
@@ -512,7 +512,7 @@
 <p>回调函数（callback）、事件监听、发布/订阅、promise对象、async/await</p>
 </li>
 <li><p><code>history.go() 与 history.back() 的区别</code></p>
-<p>history.back(-1)      //直接返回当前页的上一页，数据全部消息，是个新页面<br>history.go(-1)          //也是返回当前页的上一页，不过表单里的数据全部还在</p>
+<p>history.back(-1)      //直接返回当前页的上一页，数据全部消失，是个新页面<br>history.go(-1)          //也是返回当前页的上一页，不过表单里的数据全部还在</p>
 </li>
 <li><p><code>闭包</code></p>
 <p>闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。</p>
@@ -543,9 +543,8 @@
 <li><p><code>Vue 双向数据绑定原理</code><br>vue实现双向数据绑定的原理就是利用了 Object.defineProperty() 这个方法重新定义了对象获取属性值(get)和设置属性值(set)的操作来实现的。 </p>
 <p>在MDN上对该方法的说明是：Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。 </p>
 <p>它接收三个参数，要操作的对象，要定义或修改的对象属性名，属性描述符。重点就是最后的属性描述符。 </p>
-<p>属性描述符是一个对象，主要有两种形式：数据描述符和存取描述符。这两种对象只能选择一种使用，不能混合两种描述符的属性同时使用。上面说的get和s </p>
-<p>et就是属于存取描述符对象的属性。 </p>
-<p>然后我们可以通过在存取描述符中的get和set方法内写入自定义的逻辑来实现对象获取属性和设置属性时的行为。</p>
+<p>属性描述符是一个对象，主要有两种形式：数据描述符和存取描述符。这两种对象只能选择一种使用，不能混合两种描述符的属性同时使用。上面说的 get 和 set 就是属于存取描述符对象的属性。 </p>
+<p>然后我们可以通过在存取描述符中的 get 和 set 方法内写入自定义的逻辑来实现对象获取属性和设置属性时的行为。</p>
 </li>
 <li><p><code>React</code><br><a href="https://segmentfault.com/a/1190000016885832" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016885832</a></p>
 </li>
