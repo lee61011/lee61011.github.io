@@ -104,7 +104,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2019-08-01T04:00:36.879Z">
+<meta property="og:updated_time" content="2019-08-09T11:59:32.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题总结">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/005ywkXxly1g0q0pjzue9j31900u0hdt.jpg">
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,443
+                  2,588
                 </span>
               
 
@@ -516,6 +516,15 @@
 </li>
 <li><p><code>闭包</code></p>
 <p>闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。</p>
+</li>
+<li><p><code>this 的指向</code><br>第一准则是：this永远指向函数运行时所在的对象，而不是函数被创建时所在的对象。</p>
+<ul>
+<li>普通的函数调用，函数被谁调用，this就是谁。</li>
+<li>构造函数的话，如果不用new操作符而直接调用，那即this指向window。用new操作符生成对象实例后，this就指向了新生成的对象。</li>
+<li>匿名函数或不处于任何对象中的函数指向window 。</li>
+<li>如果是call，apply等，指定的this是谁，就是谁。</li>
+<li>参考：<a href="https://link.juejin.im?target=https%3A%2F%2Fwww.cnblogs.com%2Fbeidan%2Fp%2F5371275.html" target="_blank" rel="noopener">www.cnblogs.com/beidan/p/53…</a></li>
+</ul>
 </li>
 <li><p><code>原型/原型链</code></p>
 <p><em>原型：</em> 无论什么时候，只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个 prototype 属性，这个属性指向函数的原型对象。在默认情况下，所有原型对象都会自动获得一个 constructor（构造函数）属性，这个属性是一个指向 prototype 属性所在函数的指针<br><em>原型链：</em>原型链的基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法<br>构造函数、原型和实例的关系：每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。如果让原型对象等于另一个类型的实例，那么此时的原型对象将包含一个指向另一个原型的指针，相应地，另一个原型中也包含着一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么上述关系依然成立，如此层层递进，就构成了实例与原型的链条。这就是所谓原型链的基本概念。</p>
